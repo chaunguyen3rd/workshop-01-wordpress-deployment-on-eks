@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 2.1 </b> "
 ---
 
-In this step, we will need to create a VPC with 2 public / private subnets. Then create 1 EC2 Instance Linux located in the public subnet, 1 EC2 Instance Windows located in the private subnet.
+In this step, we will need to create a VPC with 3 public and 2 private subnets. Then create 1 EC2 Instance Linux located in the public subnet, 1 Application Load balancer located in the rest of two public subnets, EKS cluster will be in 2 private subnets.
 
 The architecture overview after you complete this step will be as follows:
 
