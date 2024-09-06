@@ -11,7 +11,7 @@ pre : " <b> 2.1.2 </b> "
 1. Click **Subnets**.
   + Click **Create subnet**.
 
-![VPC](/images/2.prerequisite/003-createsubnet.png)
+![VPC](/images/2.prerequisite/ws01-createvpc03.png)
 
 2. At the **Create subnet** page.
   + In the **VPC ID** section, click **Lab VPC**.
