@@ -49,26 +49,21 @@ pre : " <b> 2.1.2 </b> "
 
 6. Click **Internet Gateways**.
   + Click **Create internet gateway**.
-  
-![VPC](/images/2.prerequisite/007-createigw.png)
+  ![VPC](/images/2.prerequisite/ws01-createvpc10.png)
 
 7. At the **Create internet gateway** page.
-  + In the **Name tag** field, enter **Lab IGW**.
+  + In the **Name tag** field, enter **labIGW01**.
   + Click **Create internet gateway**.
-  
-![VPC](/images/2.prerequisite/008-createigw.png)
+  ![VPC](/images/2.prerequisite/ws01-createvpc11.png)
 
 8. After successful creation, click **Actions**.
   + Click **Attach to VPC**.
- 
-![VPC](/images/2.prerequisite/009-createigw.png)
+  ![VPC](/images/2.prerequisite/ws01-createvpc12.png)
 
 9. At the **Attach to VPC** page.
-  + In the **Available VPCs** section, select **Lab VPC**.
+  + In the **Available VPCs** section, select **labVPC01**.
   + Click **Attach internet gateway**.
-  + Check the successful attaching process as shown below.
-
-![VPC](/images/2.prerequisite/010-createigw.png)
+  ![VPC](/images/2.prerequisite/ws01-createvpc13.png)
 
 10. Next we will create a custom route table to assign to **Lab Public Subnet**.
   + Click **Route Tables**.
