@@ -6,34 +6,21 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
+**IAM roles in AWS (Identity and Access Management)** are a way to grant specific permissions to users, services, or applications without using their own identity. Instead of being tied to a single user, IAM roles can be assumed temporarily by trusted entities, allowing them to perform actions based on the permissions associated with the role.
+
+IAM roles are commonly used for:
+
+- **Cross-Account Access**: Allowing users or services in one AWS account to access resources in another account.
+- **Service Permissions**: Granting AWS services (like EC2 or Lambda) the necessary permissions to interact with other AWS services.
+- **Federated Users**: Granting permissions to users who have been authenticated outside of AWS (e.g., through an external identity provider).
+  
+IAM roles are defined by a policy that specifies what actions are allowed or denied, and they are assumed by calling the `sts:AssumeRole` API, which provides temporary security credentials for the duration of the session.
+
 ### Create IAM Role
 
-In this step, we will proceed to create IAM Role. In this IAM Role, the policy **AmazonSSMManagedInstanceCore** will be assigned, this is the policy that allows the EC2 server to communicate with the Session Manager.
+In this step, we will proceed to create required IAM Roles and policies to finish this lab. 
 
-1. Go to [IAM service administration interface](https://console.aws.amazon.com/iamv2/)
-2. In the left navigation bar, click **Roles**.
-
-![role](/images/2.prerequisite/038-iamrole.png)
-
-3. Click **Create role**.
-
-![role1](/images/2.prerequisite/039-iamrole.png)
-
-4. Click **AWS service** and click **EC2**.
-  + Click **Next: Permissions**.
-
-![role1](/images/2.prerequisite/40-iamrole.png)
-
-5. In the Search box, enter **AmazonSSMManagedInstanceCore** and press Enter to search for this policy.
-  + Click the policy **AmazonSSMManagedInstanceCore**.
-  + Click **Next: Tags.**
-
-![createpolicy](/images/2.prerequisite/041-iamrole.png)
-
-6. Click **Next: Review**.
-7. Name the Role **SSM-Role** in Role Name
-  + Click **Create Role** \.
-
-![namerole](/images/2.prerequisite/042-iamrole.png)
-
-Next, we will make the connection to the EC2 servers we created with **Session Manager**.
+### Content
+  - [Create labEKSClusterRole](2.2.1-createeksclusterrole/)
+  - [Create labNodeGroupsRole](2.2.2-createnodegrouprole/)
+  - [Create labEFSCSIDriverRole](2.2.3-createefscsidriverrole/)

@@ -33,3 +33,4 @@ pre : " <b> 2.1.6 </b> "
 6. Leave as default with **Step 4** and click **Create**.
   ![EC2](/images/2.prerequisite/ws01-createefs05.png)
    
+Next, we will create required IAM roles and policies to finish this lab.
