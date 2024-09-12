@@ -1,26 +1,26 @@
 ---
-title : "Create EFS"
+title : "Create Public instance"
 date : "`r Sys.Date()`"
-weight : 6
+weight : 5
 chapter : false
-pre : " <b> 2.1.6 </b> "
+pre : " <b> 2.1.5 </b> "
 ---
 
-1. Go to [EFS service management console](https://console.aws.amazon.com/efs/home)
-  - Click **File systems**.
-  - Click **Create file system**.
-  ![EC2](/images/2.prerequisite/ws01-createefs01.png)  
+1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
+  - Click **Instances**.
+  - Click **Launch instances**.
+  ![EC2](/images/2.prerequisite/ws01-createec201.png)  
 
-2. At the **Create file system** popup.
-  - Fill the **Name** field with **labEFS01** value.
-  - Fill the **Virtual Private Cloud (VPC)** with **labVCP01** value.
-  - Click the **Customize** button.
-  ![EC2](/images/2.prerequisite/ws01-createefs02.png)
+2. At the **Name and tags** section.
+  - Fill the **Name** field with **labBastionHost01** value.
+  - Fill the **Number of instances** with **1** value.
+  ![EC2](/images/2.prerequisite/ws01-createec202.png)
 
-3. At the **Step 1: File system settings** section.
-  - Leave all fields in this step as default.
-  - Click **Next** button.
-  ![EC2](/images/2.prerequisite/ws01-createefs03.png)
+3. At the **Application and OS Images (Amazon Machine Image)** section.
+  - Click on Instance type **Ubuntu**.
+  - Choose **Ubuntu Server 24.04 LTS (HVM), SSD Volume Type** on Amazon Machine Image (AMI) field.
+  - Leave the rest as default.
+  ![EC2](/images/2.prerequisite/ws01-createec203.png)
 
 4. At the **Instance type** section.
   - Choose **t2.micro** Instance type.
