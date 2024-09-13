@@ -1,17 +1,20 @@
 ---
-title : "Connect to Public Instance"
+title : "Create EKS cluster"
 date : "`r Sys.Date()`"
 weight : 1
 chapter : false
 pre : " <b> 3.1. </b> "
 ---
-![SSMPublicinstance](/images/arc-02.png)
 
-1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
-  + Click on **Public Linux Instance**.
-  + Click **Actions**.
-  + Click **Security**.
-  + Click **Modify IAM role**.
+{{% notice note %}}
+To implement this step, you need to finish all steps from [Prerequisite](/2-Prerequisite/).
+{{% /notice %}}
+
+1. Go to [EKS service management console](https://console.aws.amazon.com/eks/home).
+  - Click on **Public Linux Instance**.
+  - Click **Actions**.
+  - Click **Security**.
+  - Click **Modify IAM role**.
 
 ![Connect](/images/3.connect/001-connect.png)
 
