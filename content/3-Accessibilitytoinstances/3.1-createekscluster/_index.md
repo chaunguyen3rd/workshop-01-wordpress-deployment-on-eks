@@ -11,42 +11,42 @@ To implement this step, you need to finish all steps from [Prerequisite](/2-Prer
 {{% /notice %}}
 
 1. Go to [EKS service management console](https://console.aws.amazon.com/eks/home).
-  - Click on **Public Linux Instance**.
-  - Click **Actions**.
-  - Click **Security**.
-  - Click **Modify IAM role**.
+  - Click on **Clusters**.
+  - Click **Add cluster**, then click **Create**.
+  ![Connect](/images/3.eks/ws01-createeks01.png)
 
-![Connect](/images/3.connect/001-connect.png)
+2. At **Step 1: Configure cluster** section.
+  - Fill the **Name** field with **labEKSCluster01** value.
+  - At the **Cluster service role** field, choose **labEKSClusterRole**.
+  ![Connect](/images/3.eks/ws01-createeks02.png)
+  - Scroll down and click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks03.png)
 
-2. At the Modify IAM role page.
-  + Click to select **SSM-Role**.
-  + Click **Save**.
+3. At **Step 2: Specify networking** section.
+  - At the **VPC** field, choose **labVPC01**.
+  - At the **Subnets** field, choose **labPrivateSubnet01** and **labPrivateSubnet02**.
+  - At the **Security groups** field, choose **labEKSClusterSG01**.
+  ![Connect](/images/3.eks/ws01-createeks04.png)
+  - Scroll down, at **Cluster endpoint access** section, choose **Private**.
+  - Click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks05.png)
+
+4. At **Step 3: Configure observability** section.
+  - Leave as default and click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks06.png)
+
+5. At **Step 4: Select add-ons** section.
+  - Leave as default and click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks07.png)
+
+6. At **Step 5: Configure selected add-ons settings** section.
+  - Leave as default and click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks08.png)
+
+7. At **Step 6: Review and create** section.
+  - Leave as default and click **Create**.
+  ![Connect](/images/3.eks/ws01-createeks09.png)
 
 {{% notice note %}}
-You will need to wait about 10 minutes before performing the next step. This time our EC2 instance will automatically register with the Session Manager.
+It will take some time for the EKS cluster to be successfully created.
 {{% /notice %}}
-
-3. Go to the [AWS Systems Manager service management console](https://console.aws.amazon.com/systems-manager/home)
-  + Drag the left menu slider down.
-  + Click **Session Manager**.
-  + Click **Start Session**.
-
-
-![Connect](/images/3.connect/002-connect.png)
-
-
-4. Then select **Public Linux Instance** and click **Start session** to access the instance.
-
-![Connect](/images/3.connect/003-connect.png)
-
-
-5. Terminal will appear on the browser. Testing with the command ``` sudo tcpdump -nn port 22 ``` and ```sudo tcpdump ``` we will see no SSH traffic but only HTTPS traffic.
-
-![Connect](/images/3.connect/004-connect.png)
-
-{{% notice note %}}
- Above, we have created a connection to the public instance without opening SSH port 22, for better security, avoiding any attack to the SSH port.\
-One disadvantage of the above method is that we have to open the Security Group outbound at port 443 to the internet. Since it's a public instance, it probably won't be a problem, but if you want extra security, you can block port 443 to the internet and still use the Session Manager. We will go through this in the private instance section below.
- {{% /notice %}}
-
- You can click terminate to end the currently connected session before proceeding to the next step.
