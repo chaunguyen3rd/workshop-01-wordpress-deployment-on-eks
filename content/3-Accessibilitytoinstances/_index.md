@@ -26,4 +26,4 @@ In this step, we will create our EKS Cluster, located in private subnets.
 
 ### Content
 3.1. [Create EKS cluster](3.1-createekscluster/) \
-3.2. [Cconnect to EC2 Private Server](3.2-private-instance/)
+3.2. [Create EFS CSI driver role](3.2-createefscsidriverrole/)

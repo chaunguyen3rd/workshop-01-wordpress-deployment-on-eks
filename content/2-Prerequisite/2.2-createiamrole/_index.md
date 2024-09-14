@@ -23,4 +23,3 @@ In this step, we will proceed to create required IAM Roles and policies to finis
 ### Content
   - [Create labEKSClusterRole](2.2.1-createeksclusterrole/)
   - [Create labNodeGroupsRole](2.2.2-createnodegrouprole/)
-  - [Create labEFSCSIDriverRole](2.2.3-createefscsidriverrole/)

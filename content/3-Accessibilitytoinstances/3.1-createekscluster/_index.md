@@ -50,3 +50,9 @@ To implement this step, you need to finish all steps from [Prerequisite](/2-Prer
 {{% notice note %}}
 It will take some time for the EKS cluster to be successfully created.
 {{% /notice %}}
+
+7. Check if labEKSCluster01 created successfully or not.
+  - Save this **OpenID Connect provider URL** for the next step.
+  ![Connect](/images/3.eks/ws01-createeks10.png)
+
+Next we will create EFS CSI driver role.
