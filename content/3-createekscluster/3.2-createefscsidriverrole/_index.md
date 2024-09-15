@@ -37,41 +37,6 @@ Read more: https://github.com/kubernetes-sigs/aws-efs-csi-driver
   - Copy this ARN value to use in the next steps.
   ![VPC](/images/3.eks/ws01-createeks15.png)
 
-3. Go to [IAM management console](https://console.aws.amazon.com/iam/home)
-  - Click **Policies**.
-  - Click **Create policy**.
-  ![VPC](/images/3.eks/ws01-createeks14.png)
-
-4. At **Step 1: Specify permissions** section.
-  - Choose **JSON**.
-  - Copy this code block below, and edit:
-    + Change ``arn:aws:iam::017820706022:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/7EF8CA17383660AC224C4511F279A32D`` value to ARN value from **step 2**.
-    + Change ``oidc.eks.us-east-1.amazonaws.com/id/7EF8CA17383660AC224C4511F279A32D`` value to Provider value from **step 2**.
-    ```
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::017820706022:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/7EF8CA17383660AC224C4511F279A32D"
-          },
-          "Action": "sts:AssumeRoleWithWebIdentity",
-          "Condition": {
-            "StringLike": {
-              "oidc.eks.us-east-1.amazonaws.com/id/7EF8CA17383660AC224C4511F279A32D:sub": "system:serviceaccount:kube-system:efs-csi-*",
-              "oidc.eks.us-east-1.amazonaws.com/id/7EF8CA17383660AC224C4511F279A32D:aud": "sts.amazonaws.com"
-            }
-          }
-        }
-      ]
-    }
-    ```
-
-
-
-
-
 3. At [IAM management console](https://console.aws.amazon.com/iam/home) section.
   - Click **Roles**.
   - Click **Create role**.
@@ -84,3 +49,51 @@ Read more: https://github.com/kubernetes-sigs/aws-efs-csi-driver
     + Choose **sts.amazonaws.com** at **Audience** field.
   - Click **Next**.
   ![VPC](/images/3.eks/ws01-createeks13.png)
+
+5. At **Step 2: Add permissions** section.
+  - Enter **AmazonEFSCSIDriverPolicy** in the **Filter policies** box.
+  - Select checkbox of the **AmazonEFSCSIDriverPolicy** returned in the search.
+  - Click **Next**.
+  ![VPC](/images/3.eks/ws01-createeks16.png)
+
+6. At **Step 3: Name, review, and create** section.
+  - At **Role details** section, enter **labEKSEFSCSIDriverRole** value at **Role name** field
+  ![VPC](/images/3.eks/ws01-createeks17.png)
+  - Scroll down and click **Create role**.
+  ![VPC](/images/3.eks/ws01-createeks18.png)
+
+7. At **Role management console**.
+  - Choose **labEKSEFSCSIDriverRole** role that created in the previous step.
+  ![VPC](/images/3.eks/ws01-createeks19.png)
+
+8. At **labEKSEFSCSIDriverRole** section.
+  - Choose **Trust relationships** tab.
+  - Choose **Edit trust policy**.
+  ![VPC](/images/3.eks/ws01-createeks20.png)
+
+9. At **Edit trust policy** section.
+  - Edit the current config as below.
+    +  Change ``arn:aws:iam::017820706022:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE`` value to your ARN value from **step 2**.
+    + Change ``oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE`` value to your Provider value from **step 2**.
+    ```
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::017820706022:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE"
+          },
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {
+            "StringLike": {
+              "oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE:sub": "system:serviceaccount:kube-system:efs-csi-*",
+              "oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE:aud": "sts.amazonaws.com"
+            }
+          }
+        }
+      ]
+    }
+    ```
+  - Click **Update policy**.
+  ![VPC](/images/3.eks/ws01-createeks21.png)
