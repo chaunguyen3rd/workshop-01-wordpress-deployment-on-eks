@@ -10,7 +10,7 @@ pre : " <b> 3.1. </b> "
 To implement this step, you need to finish all steps from [Prerequisite](/2-Prerequisite/).
 {{% /notice %}}
 
-1. Go to [EKS service management console](https://console.aws.amazon.com/eks/home).
+1. Go to [EKS management console](https://console.aws.amazon.com/eks/home).
   - Click on **Clusters**.
   - Click **Add cluster**, then click **Create**.
   ![Connect](/images/3.eks/ws01-createeks01.png)
@@ -47,12 +47,12 @@ To implement this step, you need to finish all steps from [Prerequisite](/2-Prer
   - Leave as default and click **Create**.
   ![Connect](/images/3.eks/ws01-createeks09.png)
 
-{{% notice note %}}
-It will take some time for the EKS cluster to be successfully created.
-{{% /notice %}}
+  {{% notice note %}}
+  It will take some time for the EKS cluster to be successfully created.
+  {{% /notice %}}
 
-7. Check if labEKSCluster01 created successfully or not.
+7. Check if **labEKSCluster01** cluster created successfully or not.
   - Save this **OpenID Connect provider URL** for the next step.
   ![Connect](/images/3.eks/ws01-createeks10.png)
 
-Next we will create EFS CSI driver role.
+Next we will create Node groups.
