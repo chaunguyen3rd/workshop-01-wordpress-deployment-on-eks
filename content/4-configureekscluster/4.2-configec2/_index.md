@@ -1,5 +1,5 @@
 ---
-title : "Configure the EC2 bastion host"
+title : "Configure the public EC2"
 date : "`r Sys.Date()`"
 weight : 2
 chapter : false
