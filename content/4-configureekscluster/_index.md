@@ -10,7 +10,7 @@ pre : " <b> 4. </b> "
 In this step, we will connect and configure the cluster we just created so that we can install and use Wordpress with some tools.
 
 ### Content:
-  - [Connect to EKS cluster](4.1-connecttoekscluster/)
-  - [Create **S3 Bucket**](4.2-creates3bucket/)
-  - [Create S3 Gateway endpoint](./4.3-creategwes3)
+  - [Create **Access key**](4.1-createaccesskey/)
+  - [Configure the **EC2 bastion host**](4.2-configec2/)
+  - [Configure the **EKS cluster**](4.3-configekscluster/)
   - [Configure **Session logs**](./4.4-configsessionlogs/)
