@@ -30,7 +30,10 @@ In this step, we will use the **Bastion host (EC2 linux in public subnet)** crea
     sudo ./aws/install
     ```
   - Confirm the installation with ``aws --version``.
- 
+    ```
+    root@ip-10-0-1-234:~# aws --version
+    aws-cli/2.17.52 Python/3.12.6 Linux/6.8.0-1012-aws exe/x86_64.ubuntu.24
+    ```
 4. Install **kubectl** tool.
   - Copy and run this code block.
     ```
@@ -40,6 +43,10 @@ In this step, we will use the **Bastion host (EC2 linux in public subnet)** crea
     echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
     ```
   - Confirm the installation with ``kubectl version --client``.
+    ```
+    root@ip-10-0-1-234:~# kubectl version --client
+    Client Version: v1.30.2-eks-1552ad0
+    ```
 
 5. Install **helm** tool.
   {{% notice info %}}
@@ -53,6 +60,10 @@ In this step, we will use the **Bastion host (EC2 linux in public subnet)** crea
     sudo apt-get update
     sudo apt-get install helm
     ```
-  - Confirm the installation with ``helm --version``.
+  - Confirm the installation with ``helm version``.
+    ```
+    root@ip-10-0-1-234:~# helm version
+    version.BuildInfo{Version:"v3.16.1", GitCommit:"5a5449dc42be07001fd5771d56429132984ab3ab", GitTreeState:"clean", GoVersion:"go1.22.7"}
+    ```
 
-Next, we will proceed to connect to our **EC2 bastion host** and configure the **EKS cluster**.
+Next, we will proceed to configure the **EKS cluster**.

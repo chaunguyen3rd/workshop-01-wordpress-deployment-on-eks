@@ -6,38 +6,30 @@ chapter : false
 pre : " <b> 4.3 </b> "
 ---
 
-In this step, we will create **Access key** for the user that configure your cluster.
+In this step, we will configure our EKS cluster.
 
-#### Create **Access key**
-1. Go to [IAM management console](https://console.aws.amazon.com/iam/home)
-  - Click **Users**.
-  - Choose **User** that you use to configure the cluster.
-  ![VPC](/images/4.configure/ws01-configure02.png)
+#### Configure EKS cluster
+1. Configure **Access key** on **EC2 bastion host**.
+  - At your last SSH session.
+  - Run ``aws configure`` and enter your **Access key** credential.
+    ```
+    root@ip-10-0-1-234:~# aws configure
+    AWS Access Key ID [None]: AKIAQIJRSMTTPGVD45WE
+    AWS Secret Access Key [None]: ipVz+Y0C9Z2132n3Ef7jFLhJc415OXQmfq3cXPof
+    Default region name [None]:
+    Default output format [None]:
+    root@ip-10-0-1-234:~#
+    ```
 
-2. At **User** page.
-  - Click **Security credentials** tab.
-  - Click **Create access key**.
-  ![VPC](/images/4.configure/ws01-configure03.png)
+2. Connect to your EKS cluster.
+  - ``aws eks update-kubeconfig --region <region-code> --name <my-cluster>
+``.
+    + Change <region-code> to your **Region code**.
+    + Change <my-cluster> to your **EKS cluster name**.
+    ```
+    root@ip-10-0-1-234:~# aws eks update-kubeconfig --region us-east-1 --name labEKSCluster01
+    Added new context arn:aws:eks:us-east-1:017820706022:cluster/labEKSCluster01 to /root/.kube/config
+    ```
 
-3. At **step 1: Access key best practices & alternatives** page.
-  - Choose **Command Line Interface (CLI)**.
-  - Click on **Confirmation**.
-  - Click **Next**.
-  ![VPC](/images/4.configure/ws01-configure04.png)
 
-4. At **step 2: Set description tag** page.
-  - Leave as default and click **Create access key**.
-  ![VPC](/images/4.configure/ws01-configure05.png)
-
-5. At **step 3: Retrieve access keys** page.
-  - Save **Access key** and **Secret access key**.
-  - Click **Done**
-  ![VPC](/images/4.configure/ws01-configure06.png)
-
-6. At **User** page.
-  - Click **Permissions** tab.
-  - Make sure this user have **AdministratorAccess** permission.
-  {{% notice note %}}
-  **AdministratorAccess** permission is only used in this LAB environment. If you setup for your production environment, make sure your user have at least privileges.
-  {{% /notice %}}
-  ![VPC](/images/4.configure/ws01-configure07.png)
+    
