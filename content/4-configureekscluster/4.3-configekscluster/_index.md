@@ -30,6 +30,8 @@ In this step, we will configure our EKS cluster.
     root@ip-10-0-1-234:~# aws eks update-kubeconfig --region us-east-1 --name labEKSCluster01
     Added new context arn:aws:eks:us-east-1:017820706022:cluster/labEKSCluster01 to /root/.kube/config
     ```
+  - Check if the connection success.
+    
 
 
     
