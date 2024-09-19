@@ -1,9 +1,9 @@
 ---
 title : "Create EFS"
 date : "`r Sys.Date()`"
-weight : 6
+weight : 2
 chapter : false
-pre : " <b> 2.1.6 </b> "
+pre : " <b> 4.2 </b> "
 ---
 
 1. Go to [EFS service management console](https://console.aws.amazon.com/efs/home)
@@ -33,4 +33,3 @@ pre : " <b> 2.1.6 </b> "
 6. Leave as default with **Step 4** and click **Create**.
   ![EC2](/images/2.prerequisite/ws01-createefs05.png)
    
-Next, we will create required IAM roles and policies to finish this lab.

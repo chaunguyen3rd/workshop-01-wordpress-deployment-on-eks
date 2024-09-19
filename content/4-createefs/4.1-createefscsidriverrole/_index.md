@@ -1,9 +1,9 @@
 ---
 title : "Create EFS CSI driver role"
 date : "`r Sys.Date()`"
-weight : 3
+weight : 1
 chapter : false
-pre : " <b> 3.3. </b> "
+pre : " <b> 4.1 </b> "
 ---
 
 ### Overall
@@ -30,7 +30,7 @@ Read more: https://github.com/kubernetes-sigs/aws-efs-csi-driver
 
 2. At **Add an Identity provider** section.
   - Choose **OpenID Connect**.
-  - At **Provider URL** field, fill the value we copied from the previous step (Check **Step 7**).
+  - At **Provider URL** field, fill the value we copied from the previous step (Check **Step 7** at **3.1 Create EKS cluster**).
   - At **Audience** field, fill **sts.amazonaws.com** value.
   - Click **Add provider**.
   ![VPC](/images/3.eks/ws01-createeks12.png)

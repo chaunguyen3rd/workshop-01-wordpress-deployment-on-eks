@@ -1,12 +1,12 @@
 ---
-title : "Configure the EKS cluster"
+title : "Configure EFS CSI driver"
 date : "`r Sys.Date()`"
 weight : 3
 chapter : false
 pre : " <b> 4.3 </b> "
 ---
 
-In this step, we will configure our EKS cluster.
+In this step, we will configure our EFS CSI driver.
 
 #### Create **Access entry** to connect to EKS cluster
 1. Go to [EKS management console](https://console.aws.amazon.com/eks/home).

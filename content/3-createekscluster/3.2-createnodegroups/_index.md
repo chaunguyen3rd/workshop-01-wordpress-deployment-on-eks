@@ -53,4 +53,4 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.
 7. Check if **labNodeGroup01** created successfully or not.
   ![VPC](/images/3.eks/ws01-createeks30.png)
 
-Next we will create EFS CSI driver role.
+Next we will configure the EKS cluster.

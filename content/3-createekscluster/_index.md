@@ -27,4 +27,4 @@ In this step, we will create our EKS Cluster, located in private subnets.
 ### Content
 3.1. [Create EKS cluster](3.1-createekscluster/) \
 3.2. [Create Node groups](3.2-createnodegroups/) \
-3.3. [Create EFS CSI driver role](3.3-createefscsidriverrole/)
+3.3. [Configure EKS cluster](3.3-configureekscluster/) 
