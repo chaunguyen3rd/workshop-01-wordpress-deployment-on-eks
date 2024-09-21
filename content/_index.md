@@ -16,5 +16,5 @@ Welcome to the workshop on WordPress deployment on an Amazon EKS cluster! In thi
 2. [Preparation](2-prerequisite/)
 3. [Create EKS cluster](3-createekscluster/)
 4. [Configure the EKS cluster](4-configureekscluster/)
-5. [Port Forwarding](5-Portfwd/)
-6. [Clean up resources](6-cleanup/)
+5. [Install ALB Controller](5-createalbcontroller/)
+6. [Deploy Wordpress](6-deploywordpress/)
