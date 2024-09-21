@@ -1,91 +1,134 @@
 ---
-title : "Port Forwarding"
+title : "Install ALB Controller"
 date :  "`r Sys.Date()`" 
 weight : 5 
 chapter : false
 pre : " <b> 5. </b> "
 ---
 
+#### Overall
+**The AWS Load Balancer Controller** is a Kubernetes controller that manages AWS Elastic Load Balancers (ELBs) for a Kubernetes cluster running on Amazon EKS or self-managed Kubernetes on AWS. It automates the creation and management of Application Load Balancers (ALBs) and Network Load Balancers (NLBs) to route traffic to Kubernetes services.
+
+In this lab, we will use **AWS Application Load Balancer (ALB)**.
+
 {{% notice info %}}
-**Port Forwarding** is a useful way to redirect network traffic from one IP address - Port to another IP address - Port. With **Port Forwarding** we can access an EC2 instance located in the private subnet from our workstation.
+Read more: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html
 {{% /notice %}}
 
-We will configure **Port Forwarding** for the RDP connection between our machine and **Private Windows Instance** located in the private subnet we created for this exercise.
+#### Install **eksctl** tool.
+1. Open your terminal.
+    ```
+      ssh ubuntu@18.206.88.146 -i ~/.ssh/labBastionHostSSHKey01.pem
+    ```
+  - Change the ``18.206.88.146`` to your EC2's Public IP address.
+  - Change the ``~/.ssh/labBastionHostSSHKey01.pem`` to the path of the Key pair you downloaded when creating your EC2 instance.
+  - After successful login to your EC2, switch to sudo user with ``sudo su``.
 
-![port-fwd](/images/arc-04.png) 
+2. Install **eksctl**.
+  - Run this code block.
+    ```
+    # for ARM systems, set ARCH to: `arm64`, `armv6` or `armv7`
+    ARCH=amd64
+    PLATFORM=$(uname -s)_$ARCH
 
-#### Create IAM user with permission to connect SSM
+    curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$PLATFORM.tar.gz"
 
-1. Go to [IAM service management console](https://console.aws.amazon.com/iamv2/home)
-   + Click **Users** , then click **Add users**.
+    # (Optional) Verify checksum
+    curl -sL "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_checksums.txt" | grep $PLATFORM | sha256sum --check
 
-![FWD](/images/5.fwd/001-fwd.png)
+    tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
 
-2. At the **Add user** page.
-   + In the **User name** field, enter **Portfwd**.
-   + Click on **Access key - Programmatic access**.
-   + Click **Next: Permissions**.
-  
-![FWD](/images/5.fwd/002-fwd.png)
+    sudo mv /tmp/eksctl /usr/local/bin
+    ```
+  - Confirm the installation with ``eksctl version``
+    ```
+    root@ip-10-0-1-234:~# eksctl version
+    0.190.0
+    ```
 
-3. Click **Attach existing policies directly**.
-   + In the search box, enter **ssm**.
-   + Click on **AmazonSSMFullAccess**.
-   + Click **Next: Tags**, click **Next: Reviews**.
-   + Click **Create user**.
+#### Install AWS Load Balancer Controller with Helm
+1. Create IAM Role using **eksctl**.
+  - Download this IAM policy for AWS Load Balancer Controller ``curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.7.2/docs/install/iam_policy.json``.
+  - Create an IAM policy using the policy downloaded in the previous step.
+    ```
+    aws iam create-policy \
+      --policy-name labAWSLoadBalancerControllerPolicy \
+      --policy-document file://iam_policy.json
+    ```
+  - Verify the **IAM policy** creation.
+    ```
+    root@ip-10-0-1-234:~# aws iam create-policy \
+      --policy-name labAWSLoadBalancerControllerPolicy \
+      --policy-document file://iam_policy.json
+    {
+        "Policy": {
+            "PolicyName": "labAWSLoadBalancerControllerPolicy",
+            "PolicyId": "ANPAQIJRSMTTDGFOSBY3W",
+            "Arn": "arn:aws:iam::017820706022:policy/labAWSLoadBalancerControllerPolicy",
+            "Path": "/",
+            "DefaultVersionId": "v1",
+            "AttachmentCount": 0,
+            "PermissionsBoundaryUsageCount": 0,
+            "IsAttachable": true,
+            "CreateDate": "2024-09-21T06:26:23+00:00",
+            "UpdateDate": "2024-09-21T06:26:23+00:00"
+        }
+    }
+    ```
 
-4. Save **Access key ID** and **Secret access key** information to perform AWS CLI configuration.
+2. Create IAM Role using **eksctl**.
+  - Run this code block.
+    + Change ``labEKSCluster01`` to your's cluster name.
+    + Change ``017820706022`` to your account ID.
+    ```
+    eksctl create iamserviceaccount \
+      --cluster=labEKSCluster01 \
+      --namespace=kube-system \
+      --name=aws-load-balancer-controller \
+      --role-name labAWSLoadBalancerControllerRole \
+      --attach-policy-arn=arn:aws:iam::017820706022:policy/labAWSLoadBalancerControllerPolicy \
+      --approve
+    ```
+  - Confirm that creation success.
+    ```
+    root@ip-10-0-1-234:~# kubectl -n kube-system get serviceaccount | grep aws-load-balancer-controller
+    aws-load-balancer-controller                  0         81s
+    ```
 
-#### Install and Configure AWS CLI and Session Manager Plugin
-  
-To perform this hands-on, make sure your workstation has [AWS CLI]() and [Session Manager Plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session) installed -manager-working-with-install-plugin.html)
+3. Install AWS Load Balancer Controller. 
+  - Add **eks-charts** Helm chart repository ``helm repo add eks https://aws.github.io/eks-charts``.
+  - Update your local repo ``helm repo update eks``.
+  - Install the **AWS Load Balancer Controller**.
+    + Change ``labEKSCluster01`` to your's cluster name.
+    + Change ``vpc-091882644e7c1e207`` to your's VPC ID.
+    ```
+    helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
+      -n kube-system \
+      --set clusterName=labEKSCluster01 \
+      --set serviceAccount.create=false \
+      --set serviceAccount.name=aws-load-balancer-controller \
+      --set region=us-east-1 \
+      --set vpcId=vpc-091882644e7c1e207
+    ```
 
-More hands-on tutorials on installing and configuring the AWS CLI can be found [here](https://000011.awsstudygroup.com/).
-
-{{%notice tip%}}
-With Windows, when extracting the **Session Manager Plugin** installation folder, run the **install.bat** file with Administrator permission to perform the installation.
-{{%/notice%}}
-
-#### Implement Portforwarding
-
-1. Run the command below in **Command Prompt** on your machine to configure **Port Forwarding**.
-
-```
-   aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region (your region)
-```
-{{%notice tip%}}
-
-**Windows Private Instance** **Instance ID** information can be found when you view the EC2 Windows Private Instance server details.
-
-{{%/notice%}}
-
-   + Example command:
-
-```
-C:\Windows\system32>aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region ap-southeast-1
-```
-
-{{%notice warning%}}
-
-If your command gives an error like below: \
-SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\
-Prove that you have not successfully installed the Session Manager Plugin. You may need to relaunch **Command Prompt** after installing **Session Manager Plugin**.
-
-{{%/notice%}}
-
-2. Connect to the **Private Windows Instance** you created using the **Remote Desktop** tool on your workstation.
-   + In the Computer section: enter **localhost:9999**.
-
-
-![FWD](/images/5.fwd/003-fwd.png)
-
-
-3. Return to the administration interface of the System Manager - Session Manager service.
-   + Click tab **Session history**.
-   + We will see session logs with Document name **AWS-StartPortForwardingSession**.
-
-
-![FWD](/images/5.fwd/004-fwd.png)
-
-
-Congratulations on completing the lab on how to use Session Manager to connect and store session logs in S3 bucket. Remember to perform resource cleanup to avoid unintended costs.
+4. Verify that the controller is installed.
+    ```
+    root@ip-10-0-1-234:~# helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
+      -n kube-system \
+      --set clusterName=labEKSCluster01 \
+      --set serviceAccount.create=false \
+      --set serviceAccount.name=aws-load-balancer-controller \
+      --set region=us-east-1 \
+      --set vpcId=vpc-091882644e7c1e207
+    NAME: aws-load-balancer-controller
+    LAST DEPLOYED: Sat Sep 21 06:49:02 2024
+    NAMESPACE: kube-system
+    STATUS: deployed
+    REVISION: 1
+    TEST SUITE: None
+    NOTES:
+    AWS Load Balancer controller installed!
+    root@ip-10-0-1-234:~# kubectl get deployment -n kube-system aws-load-balancer-controller
+    NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+    aws-load-balancer-controller   2/2     2            2           58s
+    ```
