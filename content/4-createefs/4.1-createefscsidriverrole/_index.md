@@ -97,3 +97,5 @@ Read more: https://github.com/kubernetes-sigs/aws-efs-csi-driver
     ```
   - Click **Update policy**.
   ![VPC](/images/3.eks/ws01-createeks21.png)
+
+Next, we will create EFS.

@@ -33,3 +33,4 @@ pre : " <b> 4.2 </b> "
 6. Leave as default with **Step 4** and click **Create**.
   ![EC2](/images/2.prerequisite/ws01-createefs05.png)
    
+Next, we will configure the EFS CSI driver.

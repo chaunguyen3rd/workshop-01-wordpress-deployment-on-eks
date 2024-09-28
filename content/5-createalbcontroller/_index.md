@@ -151,3 +151,5 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html
   
 3. Do the same with **labPublicSubnet02**.
   ![VPC](/images/5.alb/ws01-alb03.png)
+
+Next, we will deploy **Wordpress** application.

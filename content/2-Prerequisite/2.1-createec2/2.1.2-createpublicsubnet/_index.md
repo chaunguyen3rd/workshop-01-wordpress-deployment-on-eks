@@ -98,3 +98,5 @@ pre : " <b> 2.1.2 </b> "
 
 16. Check that the route table information has been associated with 3 **labPublicSubnet0\*** and the internet route information has been pointed to the Internet Gateway as shown below.
   ![VPC](/images/2.prerequisite/ws01-createvpc20.png)
+
+Next, we will create Private subnet.

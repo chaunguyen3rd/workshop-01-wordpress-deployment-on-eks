@@ -28,3 +28,5 @@ pre : " <b> 2.2.2 </b> "
   ![VPC](/images/2.prerequisite/ws01-createrole08.png)
   - Scroll down and click **Create role**.
   ![VPC](/images/2.prerequisite/ws01-createrole09.png)
+
+Next, we will create EKS cluster.

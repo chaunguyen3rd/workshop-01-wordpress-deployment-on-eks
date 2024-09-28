@@ -27,3 +27,5 @@ pre : " <b> 2.2.1 </b> "
   ![VPC](/images/2.prerequisite/ws01-createrole04.png)
   - Scroll down and click **Create role**.
   ![VPC](/images/2.prerequisite/ws01-createrole05.png)
+
+Next, we will create **labNodeGroupsRole**.

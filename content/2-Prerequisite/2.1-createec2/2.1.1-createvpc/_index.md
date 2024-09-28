@@ -17,3 +17,5 @@ pre : " <b> 2.1.1 </b> "
   - In the **IPv4 CIDR** field, enter: **10.0.0.0/16**.
   - Click **Create VPC**.
   ![VPC](/images/2.prerequisite/ws01-createvpc02.png)
+
+Next, we will create Public subnet.

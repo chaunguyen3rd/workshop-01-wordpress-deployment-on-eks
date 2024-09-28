@@ -59,7 +59,7 @@ In this step, we will deploy the **Wordpress** application on our **EKS** cluste
     statefulset.apps/my-release-mariadb   1/1     5m20s
     ```
 
-3. Get **Wordpress** application Public URL. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
+3. Get **Wordpress** application Public URL. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
   - On the left panel, scroll down and click **Load Balancers**.
   - Choose **k8s-default-myreleas-65aed09cf0** load balancer and click **Copy** icon on the **DNS name** **k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com**.
   ![Deploy](/images/6.deploy/ws01-deploy01.png)
@@ -69,3 +69,5 @@ In this step, we will deploy the **Wordpress** application on our **EKS** cluste
   ![Deploy](/images/6.deploy/ws01-deploy02.png)
   - Admin page: ``http://k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com/admin``.
   ![Deploy](/images/6.deploy/ws01-deploy03.png)
+
+So, we have completed the deployment of Wordpress application on EKS lab.

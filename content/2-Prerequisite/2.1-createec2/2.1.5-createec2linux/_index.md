@@ -53,4 +53,4 @@ pre : " <b> 2.1.5 </b> "
 7. Click **View all instances** to return to the list of EC2 instances.
   ![EC2](/images/2.prerequisite/ws01-createec209.png)
 
-Next, we will create EFS for EKS cluster connect to later.
+Next, we will configure our EC2 linux bastion host.

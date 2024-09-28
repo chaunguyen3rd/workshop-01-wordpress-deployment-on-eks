@@ -15,6 +15,6 @@ pre : " <b> 1. </b> "
 
 **WordPress** is a popular open-source content management system (CMS) that allows users to easily create and manage websites without needing extensive coding knowledge. 
 
-By the end of this workshop,  you could effectively manage and scale WordPress in a cloud-native environment. Through hands-on exercises, you'll know how to containerize WordPress, deploy it on a Kubernetes cluster using EKS, and leverage AWS services to ensure high availability, security, and performance. By the end of the workshop, you'll be prepared to deploy and manage a production-ready WordPress site on EKS, utilizing best practices for cloud-based infrastructure.
+By the end of this workshop, you could effectively manage and scale WordPress in a cloud-native environment. Through hands-on exercises, you'll know how to containerize WordPress, deploy it on a Kubernetes cluster using EKS, and leverage AWS services to ensure high availability, security, and performance. By the end of the workshop, you'll be prepared to deploy and manage a production-ready WordPress site on EKS, utilizing best practices for cloud-based infrastructure.
   
 ![ws01-target](/images/ws01-target.png)

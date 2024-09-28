@@ -23,3 +23,5 @@ In this step, we will configure NodeGroup role to access the new EFS.
   - Choose **AmazonEFSCSIDriverPolicy** policy.
   - Click **Add permissions**.
   ![VPC](/images/4.configure/ws01-configure16.png)
+
+Next, we will install **ALB Controller**.

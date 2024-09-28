@@ -79,3 +79,5 @@ In this step, we will create **Access key** for the user that configure your clu
     Default output format [None]:
     root@ip-10-0-1-234:~#
     ```
+
+Next, we will create IAM role for the lab.

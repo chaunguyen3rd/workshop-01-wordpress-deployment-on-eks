@@ -71,4 +71,4 @@ As you can see, the security group we created to use for Linux public instances 
   - Click **Create security group**.
   ![SG](/images/2.prerequisite/ws01-createsg09.png)
 
-So we are done creating the necessary security groups for EC2 instance, EKS cluster and EFS.
+So we are done creating the necessary security groups for EC2 instance, EKS cluster and EFS. Next, we will create EC2 linux bastion host.

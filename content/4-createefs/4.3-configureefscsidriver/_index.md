@@ -138,3 +138,5 @@ In this step, we will configure our EFS CSI driver.
     efs-sc   efs.csi.aws.com         Delete          Immediate              false                  17s
     gp2      kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   false                  3d20h
     ```
+
+Next, we will configure **labNodeGroupsRole**.
