@@ -132,3 +132,22 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-co
     NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
     aws-load-balancer-controller   2/2     2            2           58s
     ```
+
+#### Add needed tags for Public subnet
+{{% notice info %}}
+Read more: https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html
+{{% /notice %}}
+1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
+  - Click **Subnets**.
+  - Choose **labPublicSubnet01**.
+  - Click **Tags**.
+  - Click **Manage tags**.
+  ![VPC](/images/5.alb/ws01-alb01.png)
+
+2. At **Manage tags** page.
+  - Click **Add new tag**.
+  - Enter **kubernetes.io/role/elb** key and **1** value.
+  - Click **Save**.
+  
+3. Do the same with **labPublicSubnet02**.
+  ![VPC](/images/5.alb/ws01-alb03.png)
