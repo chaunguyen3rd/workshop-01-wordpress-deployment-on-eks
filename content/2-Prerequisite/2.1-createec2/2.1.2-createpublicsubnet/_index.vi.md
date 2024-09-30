@@ -1,102 +1,102 @@
 ---
-title : "Create Public Subnet"
+title : "Tạo mạng con công cộng"
 date : "`r Sys.Date()`"
 weight : 2
 chapter : false
 pre : " <b> 2.1.2 </b> "
 ---
 
-#### Create Public Subnet
+#### Tạo mạng con công cộng
 
-1. Click **Subnets**.
-  + Click **Create subnet**.
+1. Bấm **Subnets**.
+  + Bấm **Create subnet**.
   ![VPC](/images/2.prerequisite/ws01-createvpc03.png)
 
-2. At the **Create subnet** page.
-  + In the **VPC ID** section, click **labVPC01**.
+2. Ở trang **Create subnet**.
+  + Ở mục **VPC ID**, Bấm **labVPC01**.
   ![VPC](/images/2.prerequisite/ws01-createvpc04.png)
 
-3. At the **Subnet settings** section.
-  - At the **Subnet 1 of 1** section.
-    + In the **Subnet name** field, enter **labPublicSubnet01**.
-    + In the **Availability Zone** section, select the **US EAST (N. Virginia) / us-east-1a**.
-    + In the field **IPv4 CIDR block** enter **10.0.1.0/24**.
-    + Click **Add new subnet**.
+2. Ở mục **Subnet settings**.
+  - Ở mục **Subnet 1 of 1**.
+    + Ở trường **Subnet name**, nhập **labPublicSubnet01**.
+    + Ở **Availability Zone**, chọn **US EAST (N. Virginia) / us-east-1a**.
+    + Ở trường **IPv4 CIDR block** nhập **10.0.1.0/24**.
+    + Bấm **Add new subnet**.
     ![VPC](/images/2.prerequisite/ws01-createvpc05.png)
 
-  - At the **Subnet 2 of 2** section.
-    + In the **Subnet name** field, enter **labPublicSubnet02**.
-    + In the **Availability Zone** section, select the **US EAST (N. Virginia) / us-east-1b**.
-    + In the field **IPv4 CIDR block** enter **10.0.2.0/24**.
-    + Click **Add new subnet**.
+  - Ở mục **Subnet 2 of 2**.
+    + Ở trường **Subnet name**, nhập **labPublicSubnet02**.
+    + Ở trường **Availability Zone**, chọn **US EAST (N. Virginia) / us-east-1b**.
+    + Ở trường **IPv4 CIDR block**, nhập **10.0.2.0/24**.
+    + Bấm **Add new subnet**.
     ![VPC](/images/2.prerequisite/ws01-createvpc06.png)
 
-  - At the **Subnet 3 of 3** section.
-    + In the **Subnet name** field, enter **labPublicSubnet03**.
-    + In the **Availability Zone** section, select the **US EAST (N. Virginia) / us-east-1c**.
-    + In the field **IPv4 CIDR block** enter **10.0.3.0/24**.
-    + Click **Create subnet**.
+  - Ở mục **Subnet 3 of 3**.
+    + Ở trường **Subnet name**, nhập **labPublicSubnet03**.
+    + Ở **Availability Zone**, chọn **US EAST (N. Virginia) / us-east-1c**.
+    + Ở trường **IPv4 CIDR block**, nhập **10.0.3.0/24**.
+    + Bấm **Create subnet**.
     ![VPC](/images/2.prerequisite/ws01-createvpc07.png)
 
-4. Click **labPublicSubnet01**.
-  + Click **Actions**.
-  + Click **Edit subnet settings**.
+4. Bấm **labPublicSubnet01**.
+  + Bấm **Actions**.
+  + Bấm **Edit subnet settings**.
   ![VPC](/images/2.prerequisite/ws01-createvpc08.png)
 
-5. Click **Enable auto-assign public IPv4 address**.
-  + Click **Save**.
+5. Bấm **Enable auto-assign public IPv4 address**.
+  + Bấm **Save**.
   ![VPC](/images/2.prerequisite/ws01-createvpc09.png)
 
-6. Click **Internet Gateways**.
-  + Click **Create internet gateway**.
+6. Bấm **Internet Gateways**.
+  + Bấm **Create internet gateway**.
   ![VPC](/images/2.prerequisite/ws01-createvpc10.png)
 
-7. At the **Create internet gateway** page.
-  + In the **Name tag** field, enter **labIGW01**.
-  + Click **Create internet gateway**.
+7. Ở trang **Create internet gateway**.
+  + Ở trường **Name tag**, nhập **labIGW01**.
+  + Bấm **Create internet gateway**.
   ![VPC](/images/2.prerequisite/ws01-createvpc11.png)
 
-8. After successful creation, click **Actions**.
-  + Click **Attach to VPC**.
+8. Sau khi tạo thành công, Bấm **Actions**.
+  + Bấm **Attach to VPC**.
   ![VPC](/images/2.prerequisite/ws01-createvpc12.png)
 
-9. At the **Attach to VPC** page.
-  + In the **Available VPCs** section, select **labVPC01**.
-  + Click **Attach internet gateway**.
+9. Ở trang **Attach to VPC**.
+  + Ở **Available VPCs**, chọn **labVPC01**.
+  + Bấm **Attach internet gateway**.
   ![VPC](/images/2.prerequisite/ws01-createvpc13.png)
 
-10. Next we will create a custom route table to assign to **labPublicSubnet01, labPublicSubnet02 and labPublicSubnet03**.
-  + Click **Route Tables**.
-  + Click **Create route table**.
+10. Tiếp theo chúng ta sẽ tạo một bảng định tuyến tùy chỉnh để gán cho **labPublicSubnet01, labPublicSubnet02 và labPublicSubnet03**.
+  + Bấm **Route Tables**.
+  + Bấm **Create route table**.
   ![VPC](/images/2.prerequisite/ws01-createvpc14.png)
 
-11. At the **Create route table** page.
-  + In the **Name** field, enter **labPublicRT01**.
-  + In the **VPC** section, select **labVPC01**.
-  + Click **Create route table**.
+11. Ở trang **Create route table**.
+  + Ở trường **Name**, nhập **labPublicRT01**.
+  + Ở **VPC**, chọn **labVPC01**.
+  + Bấm **Create route table**.
   ![VPC](/images/2.prerequisite/ws01-createvpc15.png)
 
-12. After creating the route table successfully.
-  + Click **Edit routes**.
+12. Sau khi tạo bảng định tuyến thành công.
+  + Bấm **Edit routes**.
   ![VPC](/images/2.prerequisite/ws01-createvpc16.png)
 
-13. At the **Edit routes** page.
-  + Click **Add route**.
-  + In the **Destination** field, enter 0.0.0.0/0
-  + In the **Target** section, select **Internet Gateway** and then select **labIGW01**.
-  + Click **Save changes**.
+13. Ở trang **Edit routes**.
+  + Bấm **Add route**.
+  + Ở **Destination** field, nhập 0.0.0.0/0
+  + Ở **Target**, chọn **Internet Gateway** và chọn **labIGW01**.
+  + Bấm **Save changes**.
   ![VPC](/images/2.prerequisite/ws01-createvpc17.png)
 
-14. Click the **Subnet associations** tab.
-  + Click **Edit subnet associations** to proceed with the associate custom route table we just created in **Lab Public Subnet**.
+14. Bấm vào tab **Subnet associations**.
+  + Bấm **Edit subnet associations** để tiến hành liên kết bảng định tuyến tùy chỉnh mà chúng ta vừa tạo trong **Lab Public Subnet**.
   ![VPC](/images/2.prerequisite/ws01-createvpc18.png)
 
-15. At the **Edit subnet associations** page.
-  + Click on **Name** checkbox to choose all **labPublicSubnet0\***.
-  + Click **Save associations**.
+15. Ở trang **Edit subnet associations**.
+  + Bấm chọn **Name** để chọn tất cả **labPublicSubnet0\***.
+  + Bấm **Save associations**.
   ![VPC](/images/2.prerequisite/ws01-createvpc19.png)
 
-16. Check that the route table information has been associated with 3 **labPublicSubnet0\*** and the internet route information has been pointed to the Internet Gateway as shown below.
+16. Kiểm tra mục thông tin bảng tuyến đường đã được liên kết với 3 **labPublicSubnet0\*** và thông tin tuyến đường internet đã được chuyển đến Cổng Internet như hiển thị bên dưới.
   ![VPC](/images/2.prerequisite/ws01-createvpc20.png)
 
-Next, we will create Private subnet.
+Tiếp theo, chúng ta sẽ tạo mạng con riêng tư.

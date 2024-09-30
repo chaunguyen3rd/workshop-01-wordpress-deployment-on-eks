@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 2.1.1 </b> "
 ---
 
-#### Create VPC **Lab VPC**
+#### Create VPC **labVPC01**
 1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
   - Click **Your VPC**.
   - Click **Create VPC**.

@@ -1,20 +1,20 @@
 ---
-title : "Introduction"
+title : "Giới thiệu"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 pre : " <b> 1. </b> "
 ---
-**Amazon Elastic Kubernetes Service (EKS)** is 
-- **Fully Managed Service**: EKS is a fully managed service by AWS, handling the complexities of Kubernetes infrastructure.
-- **Simplified Deployment**: It simplifies the deployment, management, and scaling of Kubernetes clusters in the cloud.
-- **Automatic Updates**: EKS provides automatic updates and security patches, ensuring your clusters are always up-to-date.
-- **High Availability**: The service offers high availability across multiple AWS regions, ensuring reliability and uptime.
-- **Seamless Integration**: EKS integrates seamlessly with other AWS services, enhancing the capabilities of your Kubernetes applications.
-- **Focus on Innovation**: EKS allows developers to focus on innovation and application development, rather than infrastructure management.
+**Amazon Elastic Kubernetes Service (EKS)** là
+- **Dịch vụ được quản lý hoàn toàn**: EKS là dịch vụ được AWS quản lý hoàn toàn, xử lý các vấn đề phức tạp của cơ sở hạ tầng Kubernetes.
+- **Đơn giản hóa việc triển khai**: Dịch vụ này đơn giản hóa việc triển khai, quản lý và mở rộng quy mô các cụm Kubernetes trên đám mây.
+- **Cập nhật tự động**: EKS cung cấp các bản cập nhật tự động và bản vá bảo mật, đảm bảo các cụm của bạn luôn được cập nhật.
+- **Tính khả dụng cao**: Dịch vụ này cung cấp tính khả dụng cao trên nhiều vùng AWS, đảm bảo độ tin cậy và thời gian hoạt động.
+- **Tích hợp liền mạch**: EKS tích hợp liền mạch với các dịch vụ AWS khác, nâng cao khả năng của các ứng dụng Kubernetes của bạn.
+- **Tập trung vào đổi mới**: EKS cho phép các nhà phát triển tập trung vào đổi mới và phát triển ứng dụng, thay vì quản lý cơ sở hạ tầng.
 
-**WordPress** is a popular open-source content management system (CMS) that allows users to easily create and manage websites without needing extensive coding knowledge. 
+**WordPress** là một hệ thống quản lý nội dung (CMS) mã nguồn mở phổ biến cho phép người dùng dễ dàng tạo và quản lý trang web mà không cần kiến ​​thức lập trình chuyên sâu.
 
-By the end of this workshop, you could effectively manage and scale WordPress in a cloud-native environment. Through hands-on exercises, you'll know how to containerize WordPress, deploy it on a Kubernetes cluster using EKS, and leverage AWS services to ensure high availability, security, and performance. By the end of the workshop, you'll be prepared to deploy and manage a production-ready WordPress site on EKS, utilizing best practices for cloud-based infrastructure.
+Vào cuối hội thảo này, bạn có thể quản lý và mở rộng WordPress hiệu quả trong môi trường đám mây gốc. Thông qua các bài tập thực hành, bạn sẽ biết cách đóng gói WordPress, triển khai trên cụm Kubernetes bằng EKS và tận dụng các dịch vụ AWS để đảm bảo tính khả dụng, bảo mật và hiệu suất cao. Vào cuối hội thảo, bạn sẽ sẵn sàng triển khai và quản lý một trang web WordPress sẵn sàng sản xuất trên EKS, sử dụng các phương pháp hay nhất cho cơ sở hạ tầng đám mây.
   
 ![ws01-target](/images/ws01-target.png)

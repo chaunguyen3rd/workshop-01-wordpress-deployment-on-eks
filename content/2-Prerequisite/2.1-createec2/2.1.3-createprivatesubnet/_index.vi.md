@@ -1,78 +1,78 @@
 ---
-title : "Create Private Subnet"
+title : "Tạo mạng con riêng tư"
 date : "`r Sys.Date()`"
 weight : 3
 chapter : false
 pre : " <b> 2.1.3 </b> "
 ---
 
-#### Create Private Subnet
+#### Tạo mạng con riêng tư
 
-1. Click **Subnets**.
-  + Click **Create subnet**.
+1. Bấm **Subnets**.
+  + Bấm **Create subnet**.
   ![VPC](/images/2.prerequisite/ws01-createvpc21.png)
 
-2. At the **Create subnet** page.
-  - In the **VPC ID** section, click **labVPC01**.
-  - Click on **Add new subnet**.
+2. Ở trang **Create subnet**.
+  - Ở mục **VPC ID**, bấm **labVPC01**.
+  - Bấm **Add new subnet**.
   ![VPC](/images/2.prerequisite/ws01-createvpc22.png)
-  - At the **Subnet 1 of 1** section.
-    + In the **Subnet name** field, enter **labPrivateSubnet01**.
-    + In the **Availability Zone** section, select the **US EAST (N. Virginia) / us-east-1a**.
-    + In the field **IPv4 CIDR block** enter **10.0.11.0/24**.
-    + Click **Add new subnet**.
+  - Ở mục **Subnet 1 of 1**.
+    + Ở trường **Subnet name**, nhập **labPrivateSubnet01**.
+    + Ở mục **Availability Zone**, chọn **US EAST (N. Virginia) / us-east-1a**.
+    + Ở mục **IPv4 CIDR block**, nhập **10.0.11.0/24**.
+    + Bấm **Add new subnet**.
     ![VPC](/images/2.prerequisite/ws01-createvpc23.png)
-  - At the **Subnet 2 of 2** section.
-    + In the **Subnet name** field, enter **labPrivateSubnet02**.
-    + In the **Availability Zone** section, select the **US EAST (N. Virginia) / us-east-1b**.
-    + In the field **IPv4 CIDR block** enter **10.0.12.0/24**.
-    + Click **Create subnet**.
+  - Ở mục **Subnet 2 of 2**.
+    + Ở trường **Subnet name**, nhập **labPrivateSubnet02**.
+    + Ở mục **Availability Zone**, chọn **US EAST (N. Virginia) / us-east-1b**.
+    + Ở trường **IPv4 CIDR block**, nhập **10.0.12.0/24**.
+    + Bấm **Create subnet**.
     ![VPC](/images/2.prerequisite/ws01-createvpc24.png)
 
-3. At the **VPC dashboard**.
-  - Click **NAT gateways**.
-  - Click **Create NAT gateway** button.
+3. Ở **VPC dashboard**.
+  - Bấm **NAT gateways**.
+  - Bấm **Create NAT gateway** button.
   ![VPC](/images/2.prerequisite/ws01-createvpc26.png)
 
-4. At the **Create NAT gateway** page.
-  - Enter **labNATGW01** value at **Name** field.
-  - Choose **labPublicSubnet01** subnet.
-  - Choose **Public** Connectivity type.
-  - Click **Allocate Elastic IP** at **Elastic IP allocation ID** field.
-  - Click **Create NAT gateway**.
+4. Ở trang **Create NAT gateway**.
+  - Nhập **labNATGW01** ở trường **Name**.
+  - Chọn **labPublicSubnet01** subnet.
+  - Chọn **Public** Connectivity type.
+  - Bấm **Allocate Elastic IP** ở trường **Elastic IP allocation ID**.
+  - Bấm **Create NAT gateway**.
   ![VPC](/images/2.prerequisite/ws01-createvpc27.png)
 
-5. At the **VPC dashboard**.
-  - Click **Route tables**.
-  - Click **Create route table** button.
+5. Ở **VPC dashboard**.
+  - Bấm **Route tables**.
+  - Bấm **Create route table**.
   ![VPC](/images/2.prerequisite/ws01-createvpc28.png)
 
-6. At the **Create route table** page.
-  - Enter **labPrivateRT01** at **Name** field.
-  - Choose **labVPC01** at **VPC** field.
-  - Click **Create route table**.
+6. Ở trang **Create route table**.
+  - Nhập **labPrivateRT01** ở trường **Name**.
+  - Chọn trường **labVPC01** ở **VPC**.
+  - Bấm **Create route table**.
   ![VPC](/images/2.prerequisite/ws01-createvpc29.png)
 
-7. At the **labPrivateRT01** page.
+7. Ở **labPrivateRT01** page.
   - Choose **Subnets associations** tab.
-  - Click **Edit subnets associations**.
+  - Bấm **Edit subnets associations**.
   ![VPC](/images/2.prerequisite/ws01-createvpc30.png)
 
-8. At the **Edit subnet associations** page.
-  - Choose **labPrivateSubnet01** and **labPrivateSubnet02**.
-  - Click **Save associations**.
+8. Ở trang **Edit subnet associations**.
+  - Chọn **labPrivateSubnet01** và **labPrivateSubnet02**.
+  - Bấm **Save associations**.
   ![VPC](/images/2.prerequisite/ws01-createvpc31.png)
 
-9. At the **labPrivateRT01** page.
-  - Choose **Routes** tab.
-  - Click **Edit routes**.
+9. Ở trang **labPrivateRT01**.
+  - Chọn tab **Routes**.
+  - Bấm **Edit routes**.
   ![VPC](/images/2.prerequisite/ws01-createvpc32.png)
 
-10. At the **Edit routes** page.
-  - Click **Add route**.
-  - Choose **0.0.0.0/0** at **Destination** field.
-  - Choose **NAT gateway** and click on the **NAT gateway** created before.
-  - Click **Save changes**.
+10.  Ở trang **Edit routes**.
+  - Bấm **Add route**.
+  - Chọn **0.0.0.0/0** ở trường **Destination**.
+  - Chọn **NAT gateway** và bấm **NAT gateway** đã tạo từ trước.
+  - Bấm **Save changes**.
   ![VPC](/images/2.prerequisite/ws01-createvpc33.png)
     
-The next step is to create the necessary security groups for the lab.
+Bước tiếp theo là tạo các security groups cần thiết cho bài lab.

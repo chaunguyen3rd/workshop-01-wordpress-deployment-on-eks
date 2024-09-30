@@ -1,21 +1,21 @@
 ---
-title : "Wordpress deployment on EKS"
+title : "Triển khai Wordpress trên EKS"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 ---
-# Wordpress deployment on EKS
+# Triển khai Wordpress trên EKS
 
-### Overall
-Welcome to the workshop on WordPress deployment on an Amazon EKS cluster! In this lab, we'll dive into the process of setting up a robust and scalable WordPress site using Kubernetes on AWS. 
+### Tổng quan
+Chào mừng bạn đến với hội thảo về triển khai WordPress trên cụm Amazon EKS! Trong bài lab này, chúng ta sẽ tìm hiểu sâu hơn về quy trình thiết lập trang web WordPress mạnh mẽ và có khả năng mở rộng bằng Kubernetes trên AWS.
 
 ![ws01-diagram](/images/ws01-diagram.png)
 
-### Content
-1. [Introduction](1-introduce/)
-2. [Preparation](2-prerequisite/)
-3. [Create EKS cluster](3-createekscluster/)
-4. [Create EFS](4-createefs/)
-5. [Install ALB Controller](5-createalbcontroller/)
-6. [Wordpress deployment](6-deploywordpress/)
-7. [Cleanup](7-cleanup/)
+### Nội dung
+1. [Giới thiệu](1-introduce/)
+2. [Chuẩn bị](2-prerequisite/)
+3. [Tạo cụm EKS](3-createekscluster/)
+4. [Tạo EFS](4-createefs/)
+5. [Cài đặt ALB Controller](5-createalbcontroller/)
+6. [Triển khai Wordpress](6-deploywordpress/)
+7. [Dọn dẹp tài nguyên](7-cleanup/)

@@ -1,66 +1,83 @@
 ---
-title : "Tạo Public Linux EC2"
-date :  "`r Sys.Date()`" 
-weight : 5
+title : "Configure EC2 bastion host"
+date : "`r Sys.Date()`"
+weight : 6
 chapter : false
-pre : " <b> 2.1.5 </b> "
+pre : " <b> 2.1.6 </b> "
 ---
 
-1. Truy cập [giao diện quản trị dịch vụ EC2](https://console.aws.amazon.com/ec2/v2/home)
-  + Click **Instances**.
-  + Click **Launch instances**.
-  
-![EC2](/images/2.prerequisite/027-createec2.png)
+In this step, we will create **Access key** for the user that configure your cluster.
 
-2. Tại trang **Step 1: Choose an Amazon Machine Image (AMI)**.
-  + Click **Select** để lựa chọn AMI **Amazon Linux 2 AMI**.
-  
-![EC2](/images/2.prerequisite/028-createec2.png)
+#### Create **Access key**
+1. Go to [IAM management console](https://console.aws.amazon.com/iam/home)
+  - Click **Users**.
+  - Choose **User** that you use to configure the cluster.
+  ![VPC](/images/4.configure/ws01-configure02.png)
 
-3. Tại trang **Step 2: Choose an Instance Type**.
- + Click chọn Instance type **t2.micro**.
- + Click **Next: Configure Instance Details**.
- 
-![EC2](/images/2.prerequisite/029-createec2.png)
+2. At **User** page.
+  - Click **Security credentials** tab.
+  - Click **Create access key**.
+  ![VPC](/images/4.configure/ws01-configure03.png)
 
-4. Tại trang **Step 3: Configure Instance Details**
-  + Tại mục **Network** chọn **Lab VPC**.
-  + Tại mục **Subnet** chọn **Lab Public Subnet**.
-  + Tại mục **Auto-assign Public IP** chọn **Use subnet setting (Enable)**
-  + Click **Next: Add Storage**.
+3. At **step 1: Access key best practices & alternatives** page.
+  - Choose **Command Line Interface (CLI)**.
+  - Click on **Confirmation**.
+  - Click **Next**.
+  ![VPC](/images/4.configure/ws01-configure04.png)
 
-![EC2](/images/2.prerequisite/030-createec2.png)
+4. At **step 2: Set description tag** page.
+  - Leave as default and click **Create access key**.
+  ![VPC](/images/4.configure/ws01-configure05.png)
 
-5. Click **Next: Add Tags** để chuyển sang bước kế tiếp.
-  + Click **Next: Configure Security Group** để chuyển sang bước kế tiếp.
+5. At **step 3: Retrieve access keys** page.
+  - Save **Access key** and **Secret access key**.
+  - Click **Done**
+  ![VPC](/images/4.configure/ws01-configure06.png)
 
+6. At **User** page.
+  - Click **Permissions** tab.
+  - Make sure this user have **AdministratorAccess** permission.
+  {{% notice note %}}
+  **AdministratorAccess** permission is only used in this LAB environment. If you setup for your production environment, make sure your user have at least privileges.
+  {{% /notice %}}
+  ![VPC](/images/4.configure/ws01-configure07.png)
 
-6. Tại trang **Step 6: Configure Security Group**.
-  + Chọn **Select an existing security group**.
-  + Chọn security group **SG Public Linux Instance**.
-  + Click **Review and Launch**.
+#### Configure credential for EC2 bastion host
+1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
+  - Copy the IP **18.206.88.146** at **Public IPv4 address** field.
+  ![EC2](/images/4.configure/ws01-configure01.png)  
 
-![EC2](/images/2.prerequisite/031-createec2.png)
+2. Open your terminal.
+    ```
+      ssh ubuntu@18.206.88.146 -i ~/.ssh/labBastionHostSSHKey01.pem
+    ```
+  - Change the ``18.206.88.146`` to your EC2's Public IP address.
+  - Change the ``~/.ssh/labBastionHostSSHKey01.pem`` to the path of the Key pair you downloaded when creating your EC2 instance.
+  - After successful login to your EC2, switch to sudo user with ``sudo su``.
+  - Next, update the libraries with ``apt update -y && apt install -y unzip``.
+    
+3. Install **aws cli** tool.
+  - Copy and run this code block.
+    ```
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+    ```
+  - Confirm the installation with ``aws --version``.
+    ```
+    root@ip-10-0-1-234:~# aws --version
+    aws-cli/2.17.52 Python/3.12.6 Linux/6.8.0-1012-aws exe/x86_64.ubuntu.24
+    ```
 
-7. Hộp thoại cảnh báo hiện lên vì chúng ta không cấu hình tường lửa cho phép kết nối vào port 22, Click **Continue** để tiếp tục.
+4. Add **Access key** on **EC2 bastion host**.
+  - Run ``aws configure`` and enter your **Access key** credential.
+    ```
+    root@ip-10-0-1-234:~# aws configure
+    AWS Access Key ID [None]: AKIAQIJRSMTTPGVD45WE
+    AWS Secret Access Key [None]: ipVz+Y0C9Z2132n3Ef7jFLhJc415OXQmfq3cXPof
+    Default region name [None]:
+    Default output format [None]:
+    root@ip-10-0-1-234:~#
+    ```
 
-8. Tại trang **Step 7: Review Instance Launch**.
-  + Click **Launch**.
-
-9. Tại hộp thoại **Select an existing key pair or create a new key pair**.
-  + Click chọn **Create a new key pair**.
-  + Tại mục **Key pair name** điền **LabKeypair**.
-  + Click **Download Key Pair** và lưu xuống máy tính của bạn.
-  + Click **Launch Instances** để tạo máy chủ EC2.
-
-![EC2](/images/2.prerequisite/032-createec2.png)
-
-10. Click **View Instances** để quay lại danh mục EC2 instances.
-
-11. Click vào biểu tượng edit dưới cột **Name**.
-  + Tại hộp thoại **Edit Name** điền **Public Linux Instance**.
-  + Click **Save**.
-
-![EC2](/images/2.prerequisite/033-createec2.png)
-
-Tiếp theo chúng ta sẽ thực hiện tương tự để tạo 1 EC2 Instance Windows chạy trong Private subnet.
+Next, we will create IAM role for the lab.
