@@ -1,25 +1,27 @@
 ---
-title : "Create IAM Role"
+title : "Tạo IAM Role"
 date : "`r Sys.Date()`"
 weight : 2
 chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
-**IAM roles in AWS (Identity and Access Management)** are a way to grant specific permissions to users, services, or applications without using their own identity. Instead of being tied to a single user, IAM roles can be assumed temporarily by trusted entities, allowing them to perform actions based on the permissions associated with the role.
+### Tổng quan
 
-IAM roles are commonly used for:
+**IAM roles in AWS (Identity and Access Management)** là một cách để cấp quyền cụ thể cho người dùng, dịch vụ hoặc ứng dụng mà không cần sử dụng danh tính riêng của họ. Thay vì bị ràng buộc với một người dùng duy nhất, các vai trò IAM có thể được các thực thể đáng tin cậy đảm nhận tạm thời, cho phép họ thực hiện các hành động dựa trên các quyền được liên kết với vai trò đó.
 
-- **Cross-Account Access**: Allowing users or services in one AWS account to access resources in another account.
-- **Service Permissions**: Granting AWS services (like EC2 or Lambda) the necessary permissions to interact with other AWS services.
-- **Federated Users**: Granting permissions to users who have been authenticated outside of AWS (e.g., through an external identity provider).
+Vai trò IAM thường được sử dụng cho:
+
+- **Truy cập liên tài khoản**: Cho phép người dùng hoặc dịch vụ trong một tài khoản AWS truy cập tài nguyên trong một tài khoản khác.
+- **Quyền dịch vụ**: Cấp cho các dịch vụ AWS (như EC2 hoặc Lambda) các quyền cần thiết để tương tác với các dịch vụ AWS khác.
+- **Người dùng ngoài AWS**: Cấp quyền cho những người dùng đã được xác thực bên ngoài AWS (ví dụ: thông qua nhà cung cấp danh tính bên ngoài).
   
-IAM roles are defined by a policy that specifies what actions are allowed or denied, and they are assumed by calling the `sts:AssumeRole` API, which provides temporary security credentials for the duration of the session.
+Vai trò IAM được xác định bởi chính sách chỉ rõ hành động nào được phép hoặc bị từ chối và được đảm nhận bằng cách gọi API `sts:AssumeRole`, cung cấp thông tin xác thực bảo mật tạm thời trong suốt phiên.
 
-### Create IAM Role
+### Tạo IAM Role
 
-In this step, we will proceed to create required IAM Roles and policies to finish this lab. 
+Ở bước này, chúng ta sẽ tiến hành tạo các vai trò và chính sách IAM cần thiết để hoàn thành bài thực hành này.
 
-### Content
+### Nội dung
   - [Create labEKSClusterRole](2.2.1-createeksclusterrole/)
   - [Create labNodeGroupsRole](2.2.2-createnodegrouprole/)

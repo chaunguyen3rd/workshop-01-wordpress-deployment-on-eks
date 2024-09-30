@@ -1,32 +1,32 @@
 ---
-title : "Create NodeGroups role"
+title : "Tạo vai trò NodeGroups"
 date : "`r Sys.Date()`"
 weight : 2
 chapter : false
 pre : " <b> 2.2.2 </b> "
 ---
 
-#### Create IAM role **labNodeGroupsRole**
-1. Go to [IAM management console](https://console.aws.amazon.com/iam/home)
-  - Click **Roles**.
-  - Click **Create role**.
+#### Tạo vai trò IAM **labNodeGroupsRole**
+1. Đi đến [IAM management console](https://console.aws.amazon.com/iam/home)
+  - Bấm **Roles**.
+  - Bấm **Create role**.
   ![VPC](/images/2.prerequisite/ws01-createrole01.png)
 
-2. At **Step 1: Select trusted entity** section.
-  - At **Use case** section, choose **EC2** at **Service or use case** field.
-  - Next, choose **EC2**.
-  - Click **Next**.
+2. Ở mục **Step 1: Select trusted entity**.
+  - Ở mục **Use case**, chọn **EC2** ở trường **Service or use case**.
+  - Tiếp theo, chọn **EC2**.
+  - Bấm **Next**.
   ![VPC](/images/2.prerequisite/ws01-createrole06.png)
 
-3. At **Step 2: Add permissions** section.
-  - Find and choose three policies **AmazonEKS_CNI_Policy**, **AmazonEC2ContainerRegistryReadOnly** and **AmazonEKSWorkerNodePolicy**.
-  - Click **Next**.
+3. Ở mục **Step 2: Add permissions**.
+  - Tìm và chọn 3 chính sách **AmazonEKS_CNI_Policy**, **AmazonEC2ContainerRegistryReadOnly** và **AmazonEKSWorkerNodePolicy**.
+  - Bấm **Next**.
   ![VPC](/images/2.prerequisite/ws01-createrole07.png)
 
-4. At **Step 3: Name, review, and create** section.
-  - At **Role details** section, fill the **Role name** field with **labNodeGroupsRole** value.
+4. Ở mục **Step 3: Name, review, and create**.
+  - Ở mục **Role details**, điền vào mục **Role name** với giá trị **labNodeGroupsRole**.
   ![VPC](/images/2.prerequisite/ws01-createrole08.png)
-  - Scroll down and click **Create role**.
+  - Kéo xuống và bấm **Create role**.
   ![VPC](/images/2.prerequisite/ws01-createrole09.png)
 
-Next, we will create EKS cluster.
+Tiếp theo, chúng ta sẽ tạo cụm EKS.

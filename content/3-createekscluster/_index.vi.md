@@ -1,30 +1,30 @@
 ---
-title : "Create EKS Cluster"
+title : "Tạo cụm EKS"
 date : "`r Sys.Date()`"
 weight : 3
 chapter : false
 pre : " <b> 3. </b> "
 ---
 
-### Overall
-**An Amazon EKS (Elastic Kubernetes Service) cluster** is a managed Kubernetes service that makes it easy to deploy, manage, and scale containerized applications using Kubernetes on AWS. With EKS, AWS handles the management and operation of the Kubernetes control plane, including patching, upgrading, and scaling, allowing you to focus on deploying and managing your applications.
+### Tổng quan
+**Một cụm Amazon EKS (Elastic Kubernetes Service)** là dịch vụ Kubernetes được quản lý giúp dễ dàng triển khai, quản lý và mở rộng quy mô các ứng dụng được chứa trong container bằng Kubernetes trên AWS. Với EKS, AWS xử lý việc quản lý và vận hành mặt phẳng điều khiển Kubernetes, bao gồm vá lỗi, nâng cấp và mở rộng quy mô, cho phép bạn tập trung vào việc triển khai và quản lý các ứng dụng của mình.
 
-Key features of an EKS cluster include:
+Các tính năng chính của cụm EKS bao gồm:
 
-- **Managed Kubernetes Control Plane**: AWS manages the highly available Kubernetes control plane, including the API server, etcd, and other critical components.
-- **Worker Nodes**: EKS supports both managed and self-managed worker nodes, where the containers run. These nodes can be EC2 instances or AWS Fargate, a serverless compute engine for containers.
-Integration with AWS Services: EKS integrates seamlessly with other AWS services like IAM, VPC, ECR, and CloudWatch, providing enhanced security, networking, and monitoring capabilities.
-- **High Availability and Scalability**: EKS automatically distributes and replicates the control plane across multiple Availability Zones, ensuring high availability. It also supports automatic scaling of worker nodes.
+- **Managed Kubernetes Control Plane**: AWS quản lý Kubernetes control plane có tính khả dụng cao, bao gồm máy chủ API, etcd và các thành phần quan trọng khác.
+- **Worker Nodes**: EKS hỗ trợ cả các worker node được quản lý và tự quản lý, nơi các container chạy. Các node này có thể là các phiên bản EC2 hoặc AWS Fargate, một công cụ tính toán không có máy chủ dành cho container.
+Tích hợp với AWS Services: EKS tích hợp liền mạch với các dịch vụ AWS khác như IAM, VPC, ECR và CloudWatch, cung cấp khả năng bảo mật, kết nối mạng và giám sát nâng cao.
+- **Tính khả dụng và khả năng mở rộng cao**: EKS tự động phân phối và sao chép control plane trên nhiều Vùng khả dụng, đảm bảo tính khả dụng cao. Nó cũng hỗ trợ khả năng tự động mở rộng các worker node.
 
-**EKS** is ideal for running production-grade Kubernetes workloads on AWS, offering a secure, reliable, and scalable environment for containerized applications.
+**EKS** lý tưởng để chạy khối lượng công việc Kubernetes cấp sản xuất trên AWS, cung cấp môi trường an toàn, đáng tin cậy và có khả năng mở rộng cho các ứng dụng được chứa trong container.
 
 {{% notice info %}}
-Read more: https://aws.amazon.com/eks/
+Đọc thêm: https://aws.amazon.com/eks/
 {{% /notice %}}
 
-In this step, we will create our EKS Cluster, located in private subnets.
+Ở bước này, chúng ta sẽ tạo Cụm EKS, nằm trong các mạng con riêng tư.
 
 ### Content
-3.1. [Create EKS cluster](3.1-createekscluster/) \
-3.2. [Create Node groups](3.2-createnodegroups/) \
-3.3. [Configure EKS cluster](3.3-configureekscluster/) 
+3.1. [Tạo cụm EKS](3.1-createekscluster/) \
+3.2. [Tạo Node groups](3.2-createnodegroups/) \
+3.3. [Cấu hình cụm EKS](3.3-configureekscluster/) 
