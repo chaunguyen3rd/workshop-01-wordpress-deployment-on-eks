@@ -9,7 +9,7 @@ pre : " <b> 4.2 </b> "
 1. Go to [EFS service management console](https://console.aws.amazon.com/efs/home)
   - Click **File systems**.
   - Click **Create file system**.
-  ![EC2](/images/2.prerequisite/ws01-createefs01.png)  
+  ![EC2](/images/2.prerequisite/ws01-createefs01.png)
 
 2. At the **Create file system** popup.
   - Fill the **Name** field with **labEFS01** value.
