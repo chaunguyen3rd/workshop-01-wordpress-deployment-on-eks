@@ -1,22 +1,49 @@
 ---
-title : "Giới thiệu"
-date :  "`r Sys.Date()`" 
-weight : 1 
+title : "Cleanup IAM"
+date : "`r Sys.Date()`"
+weight : 6
 chapter : false
-pre : " <b> 1. </b> "
+pre : " <b> 7.6 </b> "
 ---
-**Session Manager** là một chức năng nằm trong dịch vụ System Manager của AWS, Session Manager cung cấp khả năng quản lý các máy chủ một cách an toàn mà **không cần mở port SSH, không cần Bastion Host hoặc quản lý SSH key**. 
-Session Manager cũng giúp dễ dàng tuân thủ các chính sách của công ty yêu cầu quyền truy cập có kiểm soát, đảm bảo việc bảo mật nghiêm ngặt và ghi log truy việc truy cập trong khi vẫn cung cấp cho người dùng cuối quyền truy cập đa nền tảng.
 
-Với việc sử dụng Session Manager, bạn sẽ có được những ưu điểm sau:
+### Cleanup IAM roles and policies
+#### Cleanup Access key
+1. Go to [IAM management console](https://console.aws.amazon.com/iam/home)
+  - Click **Users**.
+  - Choose user that you created the **Access key** before.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup29.png)
 
-- Không cần phải mở cổng 22 cho giao thức SSH.
-- Có thể cấu hình để kết nối không cần đi ra ngoài internet.
-- Không cần quản lý private key của server để kết nối SSH.
-- Quản lý tập trung được user bằng việc sử dụng AWS IAM.
-- Truy cập tới server một cách dễ dàng và đơn giản bằng một cú click chuột.
-- Thời gian truy cập nhanh chóng hơn các phương thức truyền thống như SSH.
-- Hỗ trợ nhiều hệ điều hành khác nhau như Linux, Windows, MacOS.
-- Log lại được các phiên kết nối và các câu lệnh đã thực thi trong lúc kết nối tới server.
+2. At **User** page.
+  - Choose **Security credentials**.
+  - Click **Actions** and click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup30.png)
+  - At the popup, click **Deactivate**, enter **Key** name and click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup31.png)
 
-Với những ưu điểm trên, bạn có thể sử dụng Session Manager thay vì sử dụng kỹ thuật Bastion host giúp chúng ta tiết kiệm được thời gian và chi phí khi quản lý server Bastion.
+#### Cleanup IAM roles and policies
+1. Go to [IAM management console](https://console.aws.amazon.com/iam/home).
+  - Click **Roles**.
+  - Choose **Roles** as image below.
+  - Click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup32.png)
+  - At the popup, enter **delete** and click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup33.png)
+
+2. At [IAM management console](https://console.aws.amazon.com/iam/home) page.
+  - Click **Policies**.
+  - Choose **Customer managed** at **Filter by Type** option.
+  - Choose **labAWSLoadBalancerControllerPolicy**.
+  - Click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup34.png)
+  - At the popup, enter **labAWSLoadBalancerControllerPolicy** and click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup35.png)
+
+3. At [IAM management console](https://console.aws.amazon.com/iam/home) page.
+  - Click **Identity providers**.
+  - Choose **Your provider** that created before.
+  - Click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup36.png)
+  - At the popup, enter **confirm** and click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup37.png)
+
+So we finish all resources needed for this lab.

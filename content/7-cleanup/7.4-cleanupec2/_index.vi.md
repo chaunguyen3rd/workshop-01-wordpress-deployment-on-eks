@@ -1,22 +1,37 @@
 ---
-title : "Giới thiệu"
-date :  "`r Sys.Date()`" 
-weight : 1 
+title : "Cleanup EC2 linux instance"
+date : "`r Sys.Date()`"
+weight : 4
 chapter : false
-pre : " <b> 1. </b> "
+pre : " <b> 7.4 </b> "
 ---
-**Session Manager** là một chức năng nằm trong dịch vụ System Manager của AWS, Session Manager cung cấp khả năng quản lý các máy chủ một cách an toàn mà **không cần mở port SSH, không cần Bastion Host hoặc quản lý SSH key**. 
-Session Manager cũng giúp dễ dàng tuân thủ các chính sách của công ty yêu cầu quyền truy cập có kiểm soát, đảm bảo việc bảo mật nghiêm ngặt và ghi log truy việc truy cập trong khi vẫn cung cấp cho người dùng cuối quyền truy cập đa nền tảng.
 
-Với việc sử dụng Session Manager, bạn sẽ có được những ưu điểm sau:
+### Cleanup EC2 linux bastion host and Security groups
+1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
+  - Click **Instances**.
+  - Choose **labBastionHost01**.
+  - Click **Instance state**.
+  - Click **Terminate (delete) instance**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup08.png)
+  - At the popup, click **Terminate (Delete)**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup09.png)
 
-- Không cần phải mở cổng 22 cho giao thức SSH.
-- Có thể cấu hình để kết nối không cần đi ra ngoài internet.
-- Không cần quản lý private key của server để kết nối SSH.
-- Quản lý tập trung được user bằng việc sử dụng AWS IAM.
-- Truy cập tới server một cách dễ dàng và đơn giản bằng một cú click chuột.
-- Thời gian truy cập nhanh chóng hơn các phương thức truyền thống như SSH.
-- Hỗ trợ nhiều hệ điều hành khác nhau như Linux, Windows, MacOS.
-- Log lại được các phiên kết nối và các câu lệnh đã thực thi trong lúc kết nối tới server.
+2. At [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
+  - On the left panel, scroll down and click **Key Pairs**.
+  - Choose **labBastionHostSSHKey01**.
+  - Click **Actions**.
+  - Click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup10.png)
+  - At the popup, enter **Delete** and click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup11.png)
 
-Với những ưu điểm trên, bạn có thể sử dụng Session Manager thay vì sử dụng kỹ thuật Bastion host giúp chúng ta tiết kiệm được thời gian và chi phí khi quản lý server Bastion.
+3. At [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home) page.
+  - On the left panel, scroll down and click **Security Groups**.
+  - Choose **labEKSClusterSG01**, **labBastionHostSG01** and **labEFSSG01**.
+  - Click **Actions**.
+  - Click **Delete security groups**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup25.png)
+  - At the popup, enter **delete** and click **Delete**.
+  ![Cleanup](/images/7.cleanup/ws01-cleanup26.png)
+
+Next, we will cleanup vpc.

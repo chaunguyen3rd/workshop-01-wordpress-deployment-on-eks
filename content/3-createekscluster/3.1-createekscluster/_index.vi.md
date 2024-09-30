@@ -1,50 +1,58 @@
 ---
-title : "Kết nối đến máy chủ Public"
-date :  "`r Sys.Date()`" 
-weight : 1 
+title : "Create EKS cluster"
+date : "`r Sys.Date()`"
+weight : 1
 chapter : false
 pre : " <b> 3.1. </b> "
 ---
-![SSMPublicinstance](/images/arc-02.png)
-
-1. Truy cập vào [giao diện quản trị của dịch vụ EC2](https://console.aws.amazon.com/ec2/v2/home).
-  + Click chọn **Public Linux Instance**.
-  + Click **Actions**.
-  + Click **Security**.
-  + Click **Modify IAM role**.
-
-![Connect](/images/3.connect/001-connect.png)
-
-2. Tại trang Modify IAM role.
-  + Click chọn **SSM-Role**.
-  + Click **Save**.
 
 {{% notice note %}}
-Bạn sẽ cần chờ khoảng 10 phút trước khi thực hiện bước tiếp theo. Thời gian này EC2 instance của chúng ta sẽ tự động đăng ký với Session Manager.
+To implement this step, you need to finish all steps from [Prerequisite](/2-Prerequisite/).
 {{% /notice %}}
 
-3. Truy cập vào [giao diện quản trị của dịch vụ AWS Systems Manager](https://console.aws.amazon.com/systems-manager/home)
-  + Kéo thanh trượt menu bên trái xuống dưới.
-  + Click **Session Manager**.
-  + Click **Start Session**.
+1. Go to [EKS management console](https://console.aws.amazon.com/eks/home).
+  - Click on **Clusters**.
+  - Click **Add cluster**, then click **Create**.
+  ![Connect](/images/3.eks/ws01-createeks01.png)
 
+2. At **Step 1: Configure cluster** section.
+  - Fill the **Name** field with **labEKSCluster01** value.
+  - At the **Cluster service role** field, choose **labEKSClusterRole**.
+  ![Connect](/images/3.eks/ws01-createeks02.png)
+  - Scroll down and click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks03.png)
 
-![Connect](/images/3.connect/002-connect.png)
+3. At **Step 2: Specify networking** section.
+  - At the **VPC** field, choose **labVPC01**.
+  - At the **Subnets** field, choose **labPrivateSubnet01** and **labPrivateSubnet02**.
+  - At the **Security groups** field, choose **labEKSClusterSG01**.
+  ![Connect](/images/3.eks/ws01-createeks04.png)
+  - Scroll down, at **Cluster endpoint access** section, choose **Private**.
+  - Click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks05.png)
 
+4. At **Step 3: Configure observability** section.
+  - Leave as default and click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks06.png)
 
-4. Sau đó chọn **Public Linux Instance** và click **Start session** để truy cập vào instance.
+5. At **Step 4: Select add-ons** section.
+  - Leave as default and click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks07.png)
 
-![Connect](/images/3.connect/003-connect.png)
+6. At **Step 5: Configure selected add-ons settings** section.
+  - Leave as default and click **Next**.
+  ![Connect](/images/3.eks/ws01-createeks08.png)
 
+7. At **Step 6: Review and create** section.
+  - Leave as default and click **Create**.
+  ![Connect](/images/3.eks/ws01-createeks09.png)
 
-5. Terminal sẽ xuất hiện trên trình duyệt. Kiểm tra với câu lệnh ``` sudo tcpdump -nn port 22 ``` và ```sudo tcpdump ``` chúng ta sẽ thấy không có traffic của SSH mà chỉ có traffic HTTPS.
+  {{% notice note %}}
+  It will take some time for the EKS cluster to be successfully created.
+  {{% /notice %}}
 
-![Connect](/images/3.connect/004-connect.png)
+7. Check if **labEKSCluster01** cluster created successfully or not.
+  - Save this **OpenID Connect provider URL** for the next step.
+  ![Connect](/images/3.eks/ws01-createeks10.png)
 
-{{% notice note %}}
- Ở trên, chúng ta đã tạo  kết nối vào public instance mà không cần mở cổng SSH 22, giúp cho việc bảo mật tốt hơn, tránh mọi sự tấn công tới cổng SSH.\
-Một nhược điểm của cách làm trên là ta phải mở Security Group outbound ở cổng 443 ra ngoài internet. Vì là public instance nên có thể sẽ không vấn đề gì nhưng nếu bạn muốn bảo mật hơn nữa, bạn có thể khoá cổng 443 ra ngoài internet mà vẫn sử dụng được Session Manager. Chúng ta sẽ đi qua cách làm này ở phần private instance dưới đây.
- {{% /notice %}}
-
- Bạn có thể terminate để kết thúc session đang kết nối trước khi qua bước tiếp theo.
-
+Next we will create Node groups.

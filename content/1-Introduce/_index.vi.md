@@ -1,22 +1,20 @@
 ---
-title : "Giới thiệu"
+title : "Introduction"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 pre : " <b> 1. </b> "
 ---
-**Session Manager** là một chức năng nằm trong dịch vụ System Manager của AWS, Session Manager cung cấp khả năng quản lý các máy chủ một cách an toàn mà **không cần mở port SSH, không cần Bastion Host hoặc quản lý SSH key**. 
-Session Manager cũng giúp dễ dàng tuân thủ các chính sách của công ty yêu cầu quyền truy cập có kiểm soát, đảm bảo việc bảo mật nghiêm ngặt và ghi log truy việc truy cập trong khi vẫn cung cấp cho người dùng cuối quyền truy cập đa nền tảng.
+**Amazon Elastic Kubernetes Service (EKS)** is 
+- **Fully Managed Service**: EKS is a fully managed service by AWS, handling the complexities of Kubernetes infrastructure.
+- **Simplified Deployment**: It simplifies the deployment, management, and scaling of Kubernetes clusters in the cloud.
+- **Automatic Updates**: EKS provides automatic updates and security patches, ensuring your clusters are always up-to-date.
+- **High Availability**: The service offers high availability across multiple AWS regions, ensuring reliability and uptime.
+- **Seamless Integration**: EKS integrates seamlessly with other AWS services, enhancing the capabilities of your Kubernetes applications.
+- **Focus on Innovation**: EKS allows developers to focus on innovation and application development, rather than infrastructure management.
 
-Với việc sử dụng Session Manager, bạn sẽ có được những ưu điểm sau:
+**WordPress** is a popular open-source content management system (CMS) that allows users to easily create and manage websites without needing extensive coding knowledge. 
 
-- Không cần phải mở cổng 22 cho giao thức SSH.
-- Có thể cấu hình để kết nối không cần đi ra ngoài internet.
-- Không cần quản lý private key của server để kết nối SSH.
-- Quản lý tập trung được user bằng việc sử dụng AWS IAM.
-- Truy cập tới server một cách dễ dàng và đơn giản bằng một cú click chuột.
-- Thời gian truy cập nhanh chóng hơn các phương thức truyền thống như SSH.
-- Hỗ trợ nhiều hệ điều hành khác nhau như Linux, Windows, MacOS.
-- Log lại được các phiên kết nối và các câu lệnh đã thực thi trong lúc kết nối tới server.
-
-Với những ưu điểm trên, bạn có thể sử dụng Session Manager thay vì sử dụng kỹ thuật Bastion host giúp chúng ta tiết kiệm được thời gian và chi phí khi quản lý server Bastion.
+By the end of this workshop, you could effectively manage and scale WordPress in a cloud-native environment. Through hands-on exercises, you'll know how to containerize WordPress, deploy it on a Kubernetes cluster using EKS, and leverage AWS services to ensure high availability, security, and performance. By the end of the workshop, you'll be prepared to deploy and manage a production-ready WordPress site on EKS, utilizing best practices for cloud-based infrastructure.
+  
+![ws01-target](/images/ws01-target.png)

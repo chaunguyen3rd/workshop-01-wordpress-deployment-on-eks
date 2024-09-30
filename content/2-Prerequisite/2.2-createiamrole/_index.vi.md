@@ -1,39 +1,25 @@
 ---
-title : "Tạo IAM Role"
-date :  "`r Sys.Date()`" 
-weight : 2 
+title : "Create IAM Role"
+date : "`r Sys.Date()`"
+weight : 2
 chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
-### Tạo IAM Role
+**IAM roles in AWS (Identity and Access Management)** are a way to grant specific permissions to users, services, or applications without using their own identity. Instead of being tied to a single user, IAM roles can be assumed temporarily by trusted entities, allowing them to perform actions based on the permissions associated with the role.
 
-Trong bước này chúng ta sẽ tiến hành tạo IAM Role. Trong IAM Role này sẽ được gán policy **AmazonSSMManagedInstanceCore**, đây là policy cho phép máy chủ EC2 có thể giao tiếp với Session Manager.
+IAM roles are commonly used for:
 
-1. Truy cập vào [giao diện quản trị dịch vụ IAM](https://console.aws.amazon.com/iamv2/)
-2. Ở thanh điều hướng bên trái, click  **Roles**.  
+- **Cross-Account Access**: Allowing users or services in one AWS account to access resources in another account.
+- **Service Permissions**: Granting AWS services (like EC2 or Lambda) the necessary permissions to interact with other AWS services.
+- **Federated Users**: Granting permissions to users who have been authenticated outside of AWS (e.g., through an external identity provider).
+  
+IAM roles are defined by a policy that specifies what actions are allowed or denied, and they are assumed by calling the `sts:AssumeRole` API, which provides temporary security credentials for the duration of the session.
 
-![role](/images/2.prerequisite/038-iamrole.png)
+### Create IAM Role
 
-3. Click **Create role**.  
+In this step, we will proceed to create required IAM Roles and policies to finish this lab. 
 
-![role1](/images/2.prerequisite/039-iamrole.png)
-
-4. Click **AWS service** và click **EC2**. 
-  + Click **Next: Permissions**.  
-
-![role1](/images/2.prerequisite/040-iamrole.png)
-
-5. Trong ô Search, điền **AmazonSSMManagedInstanceCore** và ấn phím Enter để tìm kiếm policy này.
-  + Click chọn policy **AmazonSSMManagedInstanceCore**.
-  + Click **Next: Tags.**
-
-![createpolicy](/images/2.prerequisite/041-iamrole.png)
-
-6. Click **Next: Review**.
-7. Đặt tên cho Role là **SSM-Role** ở Role Name  
-  + Click **Create Role** \.
-
-![namerole](/images/2.prerequisite/042-iamrole.png)
-
-Tiếp theo chúng ta sẽ thực hiện kết nối đến các máy chủ EC2 chúng ta đã tạo bằng **Session Manager**.
+### Content
+  - [Create labEKSClusterRole](2.2.1-createeksclusterrole/)
+  - [Create labNodeGroupsRole](2.2.2-createnodegrouprole/)

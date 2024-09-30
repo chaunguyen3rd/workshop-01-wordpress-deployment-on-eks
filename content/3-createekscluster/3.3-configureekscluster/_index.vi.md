@@ -1,20 +1,61 @@
 ---
-title : "Tạo kết nối đến máy chủ EC2 Private"
-date :  "`r Sys.Date()`" 
-weight : 2 
+title : "Configure the EKS cluster"
+date : "`r Sys.Date()`"
+weight : 3
 chapter : false
-pre : " <b> 3.2. </b> "
+pre : " <b> 3.3. </b> "
 ---
-Đối với **Windows instance** nằm trong **private subnet**, không có **public IP**, không có **internet gateway** nên không thể đi ra ngoài **internet.**\
-Với loại instance này, cách làm truyền thống là ta sẽ sử dụng kỹ thuật Bastion host tốn nhiều chi phí và công sức, nhưng ở đây chúng ta sẽ sử dụng Session Manager với loại này.\
-Cơ bản là **private instance** vẫn phải mở cổng **TCP 443** tới **System Manager**, nhưng không cho kết nối đó đi ra ngoài internet mà chỉ cho đi trong chính VPC của mình, nên đảm bảo được vấn đề bảo mật.\
-Để làm được điều đó, ta phải đưa endpoint của System Manager vào trong VPC, nghĩa là sử dụng **VPC interface endpoint:** 
 
-![ConnectPrivate](/images/arc-03.png) 
+In this step, we will configure our EKS cluster.
 
-**VPC interface endpoint** được gắn với subnet nên cách làm này không những với **private subnet** mà còn có thể làm với **public subnet**, nghĩa là với **public subnet**, bạn hoàn toàn có thể không cho **TCP 443** đi ra ngoài internet.
+#### Create **Access entry** to connect to EKS cluster
+1. Go to [EKS management console](https://console.aws.amazon.com/eks/home).
+  - Click on **Clusters**.
+  - Choose **labEKSCluster01**.
+  ![Connect](/images/4.configure/ws01-configure12.png)
 
-### Nội dung:
-   - [Kích hoạt DNS hostnames](./3.2.1-enablevpcdns/)
-   - [Tạo VPC Endpoint](./3.2.2-createvpcendpoint/)
-   - [Kết nối Private Instance](./3.3.3-connectec2/)
+2. At **labEKSCluster01** page.
+  - Click **Access** tab.
+  - Click **Create access entry**.
+  ![Connect](/images/4.configure/ws01-configure08.png)
+
+3. At **step 1: Configure IAM access entry**.
+  - Change ``arn:aws:iam::017820706022:user/chaunguyen-admin`` to your IAM user used to connect to the EKS cluster.
+  ![Connect](/images/4.configure/ws01-configure09.png)
+  - Scroll down and click **Next**.
+
+4. At **step 2: Add access policy**.
+  - Choose **AmazonEKSClusterAdminPolicy** at **Policy name** field.
+  - Click **Add policy**.
+  - Click **Next**.
+  ![Connect](/images/4.configure/ws01-configure10.png)
+
+5. At **step 3: Review and create**.
+  - Leave as default and click **Create**.
+  ![Connect](/images/4.configure/ws01-configure11.png)
+
+#### Configure the EKS cluster
+1. Open your terminal.
+    ```
+      ssh ubuntu@18.206.88.146 -i ~/.ssh/labBastionHostSSHKey01.pem
+    ```
+  - Change the ``18.206.88.146`` to your EC2's Public IP address.
+  - Change the ``~/.ssh/labBastionHostSSHKey01.pem`` to the path of the Key pair you downloaded when creating your EC2 instance.
+  - After successful login to your EC2, switch to sudo user with ``sudo su``.
+
+2. Connect to your EKS cluster.
+  - ``aws eks update-kubeconfig --region <region-code> --name <my-cluster>
+``.
+    + Change <region-code> to your **Region code**.
+    + Change <my-cluster> to your **EKS cluster name**.
+    ```
+    root@ip-10-0-1-234:~# aws eks update-kubeconfig --region us-east-1 --name labEKSCluster01
+    Added new context arn:aws:eks:us-east-1:017820706022:cluster/labEKSCluster01 to /root/.kube/config
+    ```
+  - Check if the connection success.
+    ```
+    root@ip-10-0-1-234:~# kubectl get nodes
+    NAME                          STATUS   ROLES    AGE   VERSION
+    ip-10-0-11-248.ec2.internal   Ready    <none>   44h   v1.30.2-eks-1552ad0
+    ip-10-0-12-93.ec2.internal    Ready    <none>   44h   v1.30.2-eks-1552ad0
+    ```

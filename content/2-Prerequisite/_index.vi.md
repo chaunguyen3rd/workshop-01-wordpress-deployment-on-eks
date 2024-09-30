@@ -1,23 +1,21 @@
 ---
-title : "Các bước chuẩn bị"
-date :  "`r Sys.Date()`" 
-weight : 2 
+title : "Preparation "
+date : "`r Sys.Date()`"
+weight : 2
 chapter : false
 pre : " <b> 2. </b> "
 ---
 
 {{% notice info %}}
-Bạn cần tạo sẵn 1 Linux instance thuộc public subnet và 1 Window instance thuộc private subnet để thực hiện bài thực hành này.
+You need to create a Linux instance on the public subnet to access to EKS cluster in private subnet.
 {{% /notice %}}
 
-Để tìm hiểu cách tạo các EC2 instance và VPC với public/private subnet các bạn có thể tham khảo bài lab :
-  - [Giới thiệu về Amazon EC2](https://000004.awsstudygroup.com/vi/)
-  - [Làm việc với Amazon VPC](https://000003.awsstudygroup.com/vi/)
+To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:
+- [About Amazon EC2](https://000004.awsstudygroup.com/en/)
+- [Works with Amazon VPC](https://000003.awsstudygroup.com/en/)
 
-Để sử dụng System Manager để quản lý window instance nói riêng và các instance nói chung của chúng ta trên AWS, ta cần phải cung cấp quyền cho các instance của chúng ta có thể làm việc với System Manager.Trong phần chuẩn bị này, chúng ta cũng sẽ tiến hành tạo IAM Role để cấp quyền cho các instance có thể làm việc với System Manager.
+To deploy the Wordpress application on EKS cluster, we need to grant permissions to Bastion host to be able to create and operate the Wordpress application on EKS cluster. In this preparation part, we will create VPC, IAM roles, EC2 Bastion host, EFS, ... to be able to complete this lab.
 
-### Nội dung
-  - [Chuẩn bị VPC và EC2 Instance](2.1-createec2/)
-  - [Tạo IAM Role](2.2-createiamrole/)
-
-  
+### Content
+- [Prepare VPC and EC2](2.1-createec2/)
+- [Create IAM Role](2.2-createiamrole/)
