@@ -10,7 +10,7 @@ pre : " <b> 2.1 </b> "
 
 Tổng quan về kiến ​​trúc sau khi bạn hoàn tất bước này sẽ như sau:
 
-![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-prep01.png)
+![VPC](/workshop.chaunguyen.site/2.prerequisite/ws01-prep01.png)
 
 Để tìm hiểu cách tạo các phiên bản EC2 và VPC với mạng con công khai/riêng tư, bạn có thể tham khảo các bài lab sau:
 - [Về Amazon EC2](https://000004.awsstudygroup.com/en/)

@@ -17,4 +17,4 @@ pre : " <b> 1. </b> "
 
 Vào cuối hội thảo này, bạn có thể quản lý và mở rộng WordPress hiệu quả trong môi trường đám mây gốc. Thông qua các bài tập thực hành, bạn sẽ biết cách đóng gói WordPress, triển khai trên cụm Kubernetes bằng EKS và tận dụng các dịch vụ AWS để đảm bảo tính khả dụng, bảo mật và hiệu suất cao. Vào cuối hội thảo, bạn sẽ sẵn sàng triển khai và quản lý một trang web WordPress sẵn sàng sản xuất trên EKS, sử dụng các phương pháp hay nhất cho cơ sở hạ tầng đám mây.
   
-![ws01-target](/workshop-01-wordpress-deployment-on-eks/images/ws01-target.png)
+![ws01-target](/workshop.chaunguyen.site/ws01-target.png)

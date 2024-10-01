@@ -12,27 +12,27 @@ In this step, we will create **Access key** for the user that configure your clu
 1. Go to [IAM management console](https://console.aws.amazon.com/iam/home)
   - Click **Users**.
   - Choose **User** that you use to configure the cluster.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure02.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure02.png)
 
 2. At **User** page.
   - Click **Security credentials** tab.
   - Click **Create access key**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure03.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure03.png)
 
 3. At **step 1: Access key best practices & alternatives** page.
   - Choose **Command Line Interface (CLI)**.
   - Click on **Confirmation**.
   - Click **Next**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure04.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure04.png)
 
 4. At **step 2: Set description tag** page.
   - Leave as default and click **Create access key**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure05.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure05.png)
 
 5. At **step 3: Retrieve access keys** page.
   - Save **Access key** and **Secret access key**.
   - Click **Done**
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure06.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure06.png)
 
 6. At **User** page.
   - Click **Permissions** tab.
@@ -40,12 +40,12 @@ In this step, we will create **Access key** for the user that configure your clu
   {{% notice note %}}
   **AdministratorAccess** permission is only used in this LAB environment. If you setup for your production environment, make sure your user have at least privileges.
   {{% /notice %}}
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure07.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure07.png)
 
 #### Configure credential for EC2 bastion host
 1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
   - Copy the IP **18.206.88.146** at **Public IPv4 address** field.
-  ![EC2](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure01.png)  
+  ![EC2](/workshop.chaunguyen.site/4.configure/ws01-configure01.png)  
 
 2. Open your terminal.
     ```

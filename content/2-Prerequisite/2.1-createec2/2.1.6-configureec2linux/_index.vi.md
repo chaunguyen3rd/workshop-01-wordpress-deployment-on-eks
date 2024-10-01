@@ -12,27 +12,27 @@ pre : " <b> 2.1.6 </b> "
 1. Đi đến [IAM management console](https://console.aws.amazon.com/iam/home)
   - Bấm **Users**.
   - Chọn **User** mà bạn dùng để cấu hình cụm của bạn.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure02.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure02.png)
 
 2. Ở trang **User**.
   - Bấm tab **Security credentials**.
   - Bấm **Create access key**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure03.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure03.png)
 
 3. Ở trang **step 1: Access key best practices & alternatives**.
   - Chọn **Command Line Interface (CLI)**.
   - Bấm **Confirmation**.
   - Bấm **Next**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure04.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure04.png)
 
 4. Ở trang **step 2: Set description tag**.
   - Giữ phần còn lại mặc định và bấm **Create access key**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure05.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure05.png)
 
 5. Ở trang **step 3: Retrieve access keys**.
   - Lưu **Access key** và **Secret access key**.
   - Bấm **Done**
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure06.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure06.png)
 
 6. Ở trang **User**.
   - Bấm tab **Permissions**.
@@ -40,12 +40,12 @@ pre : " <b> 2.1.6 </b> "
   {{% notice note %}}
   Quyền **AdministratorAccess** chỉ có thể sử dụng ở bài lab này. Nếu bạn setup cho môi trường production, hãy chắc chắn user có ít quyền nhất có thể.
   {{% /notice %}}
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure07.png)
+  ![VPC](/workshop.chaunguyen.site/4.configure/ws01-configure07.png)
 
 #### Cấu hình thông tin xác thực cho máy chủ EC2 bastion
 1. Đi đến [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
   - Copy địa chỉ IP **18.206.88.146** ở trường **Public IPv4 address**.
-  ![EC2](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure01.png)  
+  ![EC2](/workshop.chaunguyen.site/4.configure/ws01-configure01.png)  
 
 2. Mở terminal của bạn.
     ```

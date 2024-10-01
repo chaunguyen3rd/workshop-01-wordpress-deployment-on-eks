@@ -26,21 +26,21 @@ Read more: https://github.com/kubernetes-sigs/aws-efs-csi-driver
 1. Go to [IAM management console](https://console.aws.amazon.com/iam/home)
   - Click **Identity providers**.
   - Click **Add provider**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks11.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks11.png)
 
 2. At **Add an Identity provider** section.
   - Choose **OpenID Connect**.
   - At **Provider URL** field, fill the value we copied from the previous step (Check **Step 7** at **3.1 Create EKS cluster**).
   - At **Audience** field, fill **sts.amazonaws.com** value.
   - Click **Add provider**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks12.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks12.png)
   - Copy this ARN value to use in the next steps.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks15.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks15.png)
 
 3. At [IAM management console](https://console.aws.amazon.com/iam/home) section.
   - Click **Roles**.
   - Click **Create role**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-createrole01.png)
+  ![VPC](/workshop.chaunguyen.site/2.prerequisite/ws01-createrole01.png)
 
 4. At **Step 1: Select trusted entity** section.
   - Choose **Web identity** at **Trusted entity type** section.
@@ -48,28 +48,28 @@ Read more: https://github.com/kubernetes-sigs/aws-efs-csi-driver
     + Choose the value of **OpenID Connect provider URL** of your EKS cluster.
     + Choose **sts.amazonaws.com** at **Audience** field.
   - Click **Next**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks13.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks13.png)
 
 5. At **Step 2: Add permissions** section.
   - Enter **AmazonEFSCSIDriverPolicy** in the **Filter policies** box.
   - Select checkbox of the **AmazonEFSCSIDriverPolicy** returned in the search.
   - Click **Next**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks16.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks16.png)
 
 6. At **Step 3: Name, review, and create** section.
   - At **Role details** section, enter **labEKSEFSCSIDriverRole** value at **Role name** field
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks17.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks17.png)
   - Scroll down and click **Create role**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks18.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks18.png)
 
 7. At **Role management console**.
   - Choose **labEKSEFSCSIDriverRole** role that created in the previous step.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks19.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks19.png)
 
 8. At **labEKSEFSCSIDriverRole** section.
   - Choose **Trust relationships** tab.
   - Choose **Edit trust policy**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks20.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks20.png)
 
 9. At **Edit trust policy** section.
   - Edit the current config as below.
@@ -96,6 +96,6 @@ Read more: https://github.com/kubernetes-sigs/aws-efs-csi-driver
     }
     ```
   - Click **Update policy**.
-  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks21.png)
+  ![VPC](/workshop.chaunguyen.site/3.eks/ws01-createeks21.png)
 
 Next, we will create EFS.

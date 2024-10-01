@@ -12,27 +12,27 @@ In this step, we will configure our EKS cluster.
 1. Go to [EKS management console](https://console.aws.amazon.com/eks/home).
   - Click on **Clusters**.
   - Choose **labEKSCluster01**.
-  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure12.png)
+  ![Connect](/workshop.chaunguyen.site/4.configure/ws01-configure12.png)
 
 2. At **labEKSCluster01** page.
   - Click **Access** tab.
   - Click **Create access entry**.
-  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure08.png)
+  ![Connect](/workshop.chaunguyen.site/4.configure/ws01-configure08.png)
 
 3. At **step 1: Configure IAM access entry**.
   - Change ``arn:aws:iam::017820706022:user/chaunguyen-admin`` to your IAM user used to connect to the EKS cluster.
-  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure09.png)
+  ![Connect](/workshop.chaunguyen.site/4.configure/ws01-configure09.png)
   - Scroll down and click **Next**.
 
 4. At **step 2: Add access policy**.
   - Choose **AmazonEKSClusterAdminPolicy** at **Policy name** field.
   - Click **Add policy**.
   - Click **Next**.
-  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure10.png)
+  ![Connect](/workshop.chaunguyen.site/4.configure/ws01-configure10.png)
 
 5. At **step 3: Review and create**.
   - Leave as default and click **Create**.
-  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure11.png)
+  ![Connect](/workshop.chaunguyen.site/4.configure/ws01-configure11.png)
 
 #### Configure the EKS cluster
 1. Open your terminal.

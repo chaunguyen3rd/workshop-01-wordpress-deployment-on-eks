@@ -105,7 +105,7 @@ In this step, we will configure our EFS CSI driver.
 1. Go to [EFS service management console](https://console.aws.amazon.com/efs/home)
   - Click **File systems**.
   - Copy **fs-0003fc3d543db9be6**.
-  ![EC2](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure13.png)
+  ![EC2](/workshop.chaunguyen.site/4.configure/ws01-configure13.png)
 
 2. Create **StorageClass**.
   - Back to your terminal, save this **StorageClass** manifest.

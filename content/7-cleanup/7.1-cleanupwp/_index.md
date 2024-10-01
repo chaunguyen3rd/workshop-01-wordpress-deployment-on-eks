@@ -34,6 +34,6 @@ pre : " <b> 7.1 </b> "
 2. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
   - On the left panel, scroll down and click **Load Balancers**.
   - This time, we won't see **k8s-default-myreleas-65aed09cf0** load balancer anymore.
-  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup01.png)
+  ![Cleanup](/workshop.chaunguyen.site/7.cleanup/ws01-cleanup01.png)
 
 Next, we will cleanup EKS cluster.
