@@ -9,7 +9,7 @@ chapter : false
 ### Overall
 Welcome to the workshop on WordPress deployment on an Amazon EKS cluster! In this lab, we'll dive into the process of setting up a robust and scalable WordPress site using Kubernetes on AWS. 
 
-![ws01-diagram](/images/ws01-diagram.png)
+![ws01-diagram](/workshop-01-wordpress-deployment-on-eks/images/ws01-diagram.png)
 
 ### Content
 1. [Introduction](1-introduce/)
