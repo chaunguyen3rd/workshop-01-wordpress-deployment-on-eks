@@ -10,12 +10,12 @@ pre : " <b> 2.1.1 </b> "
 1. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
   - Bấm **Your VPC**.
   - Bấm **Create VPC**.
-  ![VPC](/images/2.prerequisite/ws01-createvpc01.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-createvpc01.png)
 
 2. Ở trang **Create VPC**.
   - Ở trường **Name tag**, nhập **labVPC01**.
   - Ở trường **IPv4 CIDR**, nhập: **10.0.0.0/16**.
   - Bấm **Create VPC**.
-  ![VPC](/images/2.prerequisite/ws01-createvpc02.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-createvpc02.png)
 
 Tiếp theo, chúng ta sẽ tạo ra mạng con công cộng.

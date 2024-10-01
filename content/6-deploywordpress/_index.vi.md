@@ -62,12 +62,12 @@ pre : "<b> 6. </b>"
 3. Lấy URL công cộng của ứng dụng **Wordpress**. Đi đến [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
   - Ở bảng bên trái, kéo xuống và bấm **Load Balancers**.
   - Chọn **k8s-default-myreleas-65aed09cf0** load balancer và bấm biểu tượng **Copy** ở **DNS name** **k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com**.
-  ![Deploy](/images/6.deploy/ws01-deploy01.png)
+  ![Deploy](/workshop-01-wordpress-deployment-on-eks/images/6.deploy/ws01-deploy01.png)
 
 4. Mở một tab trình duyệt mới.
   - Trang người dùng: ``http://k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com``.
-  ![Deploy](/images/6.deploy/ws01-deploy02.png)
+  ![Deploy](/workshop-01-wordpress-deployment-on-eks/images/6.deploy/ws01-deploy02.png)
   - Trang quản trị: ``http://k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com/admin``.
-  ![Deploy](/images/6.deploy/ws01-deploy03.png)
+  ![Deploy](/workshop-01-wordpress-deployment-on-eks/images/6.deploy/ws01-deploy03.png)
 
 Vậy là chúng ta đã hoàn thành bài lab về việc triển khai ứng dụng Wordpress trên cụm EKS.

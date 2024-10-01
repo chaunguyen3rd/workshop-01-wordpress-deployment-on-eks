@@ -142,7 +142,7 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html
   - Choose **labPublicSubnet01**.
   - Click **Tags**.
   - Click **Manage tags**.
-  ![VPC](/images/5.alb/ws01-alb01.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/5.alb/ws01-alb01.png)
 
 2. At **Manage tags** page.
   - Click **Add new tag**.
@@ -150,6 +150,6 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html
   - Click **Save**.
   
 3. Do the same with **labPublicSubnet02**.
-  ![VPC](/images/5.alb/ws01-alb03.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/5.alb/ws01-alb03.png)
 
 Next, we will deploy **Wordpress** application.

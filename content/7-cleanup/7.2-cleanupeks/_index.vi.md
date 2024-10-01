@@ -10,15 +10,15 @@ pre : " <b> 7.2 </b> "
 1. Đi đến [EKS management console](https://console.aws.amazon.com/eks/home).
   - Bấm **Clusters**.
   - Chọn **labEKSCluster01**.
-  ![Connect](/images/4.configure/ws01-configure12.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure12.png)
 
 2. Ở trang **labEKSCluster01**.
   - Bấm **Compute**.
   - Chọn **labNodeGroup01**.
   - Bấm **Delete**.
-  ![Cleanup](/images/7.cleanup/ws01-cleanup02.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup02.png)
   - Ở popup, nhập **labNodeGroup01** và bấm **Delete**.
-  ![Cleanup](/images/7.cleanup/ws01-cleanup03.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup03.png)
   {{% notice note %}}
   Sẽ mất một thời gian để xóa thành công nhóm Node.
   {{% /notice %}}
@@ -27,13 +27,13 @@ pre : " <b> 7.2 </b> "
 1. Đi đến [EKS management console](https://console.aws.amazon.com/eks/home).
   - Bấm **Clusters**.
   - Chọn **labEKSCluster01**.
-  ![Connect](/images/4.configure/ws01-configure12.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure12.png)
 
 2. Ở trang **labEKSCluster01**.
   - Bấm **Delete cluster**.
-  ![Cleanup](/images/7.cleanup/ws01-cleanup04.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup04.png)
   - Ở popup, nhập **labEKSCluster01** và bấm **Delete**.
-  ![Cleanup](/images/7.cleanup/ws01-cleanup05.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup05.png)
   {{% notice note %}}
   Sẽ mất một thời gian để xóa thành công cụm EKS.
   {{% /notice %}}

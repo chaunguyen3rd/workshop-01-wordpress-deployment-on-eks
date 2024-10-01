@@ -12,16 +12,16 @@ pre : " <b> 4.4 </b> "
 1. Đi đến [IAM management console](https://console.aws.amazon.com/iam/home)
   - Bấm **Roles**.
   - Chọn **labNodeGroupsRole**.
-  ![VPC](/images/4.configure/ws01-configure14.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure14.png)
 
 2. Ở trang thiết lập **labNodeGroupsRole**.
   - Bấm **Add permission** and chọn **Attach policies**.
-  ![VPC](/images/4.configure/ws01-configure15.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure15.png)
 
 3. Ở trang **Add permission**.
   - Tìm **AmazonEFSCSIDriverPolicy** ở ô tìm kiếm.
   - Chọn chính sách **AmazonEFSCSIDriverPolicy**.
   - Bấm **Add permissions**.
-  ![VPC](/images/4.configure/ws01-configure16.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure16.png)
 
 Tiếp theo, chúng ta sẽ cài đặt **ALB Controller**.

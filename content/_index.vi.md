@@ -9,7 +9,7 @@ chapter : false
 ### Tổng quan
 Chào mừng bạn đến với hội thảo về triển khai WordPress trên cụm Amazon EKS! Trong bài lab này, chúng ta sẽ tìm hiểu sâu hơn về quy trình thiết lập trang web WordPress mạnh mẽ và có khả năng mở rộng bằng Kubernetes trên AWS.
 
-![ws01-diagram](/images/ws01-diagram.png)
+![ws01-diagram](/workshop-01-wordpress-deployment-on-eks/images/ws01-diagram.png)
 
 ### Nội dung
 1. [Giới thiệu](1-introduce/)

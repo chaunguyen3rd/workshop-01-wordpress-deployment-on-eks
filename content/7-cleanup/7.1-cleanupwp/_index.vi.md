@@ -34,6 +34,6 @@ pre : " <b> 7.1 </b> "
 2. Đi đến [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
   - Ở bảng bên trái, kéo xuống và bấm **Load Balancers**.
   - Đến đây, chúng ta sẽ không thấy cân bằng tải **k8s-default-myreleas-65aed09cf0** nữa.
-  ![Cleanup](/images/7.cleanup/ws01-cleanup01.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup01.png)
 
 Tiếp theo, chúng ta sẽ dọn dẹp cụm EKS.
