@@ -1,17 +1,20 @@
 ---
-title : "Triển khai Wordpress trên EKS"
-date :  "`r Sys.Date()`" 
-weight : 1 
-chapter : false
+title: "Triển khai Wordpress trên EKS"
+date: "`r Sys.Date()`"
+weight: 1
+chapter: false
 ---
+
 # Triển khai Wordpress trên EKS
 
 ### Tổng quan
+
 Chào mừng bạn đến với hội thảo về triển khai WordPress trên cụm Amazon EKS! Trong bài lab này, chúng ta sẽ tìm hiểu sâu hơn về quy trình thiết lập trang web WordPress mạnh mẽ và có khả năng mở rộng bằng Kubernetes trên AWS.
 
-![ws01-diagram](/workshop.chaunguyen.site/ws01-diagram.png)
+![ws01-diagram](/workshop.chaunguyen.site/images//ws01-diagram.png)
 
 ### Nội dung
+
 1. [Giới thiệu](1-introduce/)
 2. [Chuẩn bị](2-prerequisite/)
 3. [Tạo cụm EKS](3-createekscluster/)
