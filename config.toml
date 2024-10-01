@@ -9,16 +9,16 @@ home = [ "HTML", "RSS", "JSON"]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
   # Git hub repo link
-  editURL = ""
+  editURL = "https://github.com/chaunguyen3rd/workshop-01-wordpress-deployment-on-eks"
   description = ""
-  author = "journeyoftheaverageguy@gmail.com"
+  author = "chaunguyen.3rd@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
   
 [Languages]
 [Languages.en]
-title = "AWS System Manager"
+title = "Wordpress deployment on EKS"
 weight = 1
 languageName = "English"
 
@@ -29,7 +29,7 @@ url = "https://www.facebook.com/groups/awsstudygroupfcj/"
 weight = 20
 
 [Languages.vi]
-title = "AWS System Manager"
+title = "Triển khai Wordpress trên EKS"
 weight = 2
 languageName = "Tiếng Việt"
 
