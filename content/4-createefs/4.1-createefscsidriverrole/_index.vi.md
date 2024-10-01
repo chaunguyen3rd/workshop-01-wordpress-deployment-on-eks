@@ -27,53 +27,53 @@ Các tính năng chính của trình điều khiển EFS CSI bao gồm:
   - Bấm **Add provider**.
   ![VPC](/images/3.eks/ws01-createeks11.png)
 
-1. Ở mục **Add an Identity provider**.
-  - Choose **OpenID Connect**.
-  - At **Provider URL** field, fill the value we copied from the previous step (Check **Step 7** at **3.1 Create EKS cluster**).
-  - At **Audience** field, fill **sts.amazonaws.com** value.
-  - Click **Add provider**.
+2. Ở mục **Add an Identity provider**.
+  - Chọn **OpenID Connect**.
+  - Ở trường **Provider URL**, điền giá trị bạn đã copy ở bước trước (Kiểm tra **Step 7** ở **3.1 Create EKS cluster**).
+  - Ở trường **Audience**, điền giá trị **sts.amazonaws.com**.
+  - Bấm **Add provider**.
   ![VPC](/images/3.eks/ws01-createeks12.png)
-  - Copy this ARN value to use in the next steps.
+  - Copy giá trị ARN để sử dụng cho các bước kế tiếp.
   ![VPC](/images/3.eks/ws01-createeks15.png)
 
-1. At [IAM management console](https://console.aws.amazon.com/iam/home) section.
-  - Click **Roles**.
-  - Click **Create role**.
+3. Ở mục [IAM management console](https://console.aws.amazon.com/iam/home).
+  - Bấm **Roles**.
+  - Bấm **Create role**.
   ![VPC](/images/2.prerequisite/ws01-createrole01.png)
 
-1. At **Step 1: Select trusted entity** section.
-  - Choose **Web identity** at **Trusted entity type** section.
-  - At **Web identity** section. 
-    + Choose the value of **OpenID Connect provider URL** of your EKS cluster.
-    + Choose **sts.amazonaws.com** at **Audience** field.
-  - Click **Next**.
+4. Ở mục **Step 1: Select trusted entity**.
+  - Chọn **Web identity** ở mục **Trusted entity type**.
+  - Ở mục **Web identity**. 
+    + Chọn giá trị **OpenID Connect provider URL** của cụm EKS của bạn.
+    + Chọn **sts.amazonaws.com** ở trường **Audience**.
+  - Bấm **Next**.
   ![VPC](/images/3.eks/ws01-createeks13.png)
 
-1. At **Step 2: Add permissions** section.
-  - Enter **AmazonEFSCSIDriverPolicy** in the **Filter policies** box.
-  - Select checkbox of the **AmazonEFSCSIDriverPolicy** returned in the search.
-  - Click **Next**.
+5. Ở mục **Step 2: Add permissions**.
+  - Nhập **AmazonEFSCSIDriverPolicy** ở hộp **Filter policies**.
+  - Chọn **AmazonEFSCSIDriverPolicy** hiện ra ở ô tìm kiếm.
+  - Bấm **Next**.
   ![VPC](/images/3.eks/ws01-createeks16.png)
 
-1. At **Step 3: Name, review, and create** section.
-  - At **Role details** section, enter **labEKSEFSCSIDriverRole** value at **Role name** field
+6. Ở mục **Step 3: Name, review, and create**.
+  - Ở mục **Role details**, nhập giá trị **labEKSEFSCSIDriverRole** ở trường **Role name**
   ![VPC](/images/3.eks/ws01-createeks17.png)
-  - Scroll down and click **Create role**.
+  - Kéo xuống và bấm **Create role**.
   ![VPC](/images/3.eks/ws01-createeks18.png)
 
-1. At **Role management console**.
-  - Choose **labEKSEFSCSIDriverRole** role that created in the previous step.
+7. Ở **Role management console**.
+  - Chọn vai trò **labEKSEFSCSIDriverRole** mà bạn đã tạo ra ở bước trước.
   ![VPC](/images/3.eks/ws01-createeks19.png)
 
-1. At **labEKSEFSCSIDriverRole** section.
-  - Choose **Trust relationships** tab.
-  - Choose **Edit trust policy**.
+8. Ở mục **labEKSEFSCSIDriverRole**.
+  - Chọn **Trust relationships**.
+  - Chọn **Edit trust policy**.
   ![VPC](/images/3.eks/ws01-createeks20.png)
 
-1. At **Edit trust policy** section.
-  - Edit the current config as below.
-    +  Change ``arn:aws:iam::017820706022:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE`` value to your ARN value from **step 2**.
-    + Change ``oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE`` value to your Provider value from **step 2**.
+9. Ở mục **Edit trust policy**.
+  - Sửa cấu hình hiện tại như bên dưới.
+    + Thay thế giá trị ``arn:aws:iam::017820706022:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE`` thành giá trị ARN ở **step 2**.
+    + Thay thế giá trị ``oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE`` thành giá trị Provider ở **step 2**.
     ```
     {
       "Version": "2012-10-17",
@@ -94,7 +94,7 @@ Các tính năng chính của trình điều khiển EFS CSI bao gồm:
       ]
     }
     ```
-  - Click **Update policy**.
+  - Bấm **Update policy**.
   ![VPC](/images/3.eks/ws01-createeks21.png)
 
-Next, we will create EFS.
+Tiếp theo, chúng ta sẽ tạo EFS.

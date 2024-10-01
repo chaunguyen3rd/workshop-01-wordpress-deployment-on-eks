@@ -1,15 +1,15 @@
 ---
-title : "Wordpress deployment"
+title : "Triển khai Wordpress"
 date : "`r Sys.Date()`"
 weight : 6
 chapter : false
 pre : "<b> 6. </b>"
 ---
 
-In this step, we will deploy the **Wordpress** application on our **EKS** cluster using **Helm**.
+Ở bước này, chúng ta sẽ triển khai ứng dụng **Wordpress** trên cụm **EKS** của chúng ta bằng cách sử dụng **Helm**.
 
-#### Deploy Wordpress using Helm
-1. Run this code block.
+#### Triển khai Wordpress bằng cách dùng Helm
+1. Chạy đoạn code này.
     ```
     helm install my-release oci://registry-1.docker.io/bitnamicharts/wordpress --set wordpressPassword=secretpassword \
       --set persistence.storageClass=efs-sc \
@@ -26,18 +26,18 @@ In this step, we will deploy the **Wordpress** application on our **EKS** cluste
       --set ingress.annotations."alb\.ingress\.kubernetes\.io\/scheme"=internet-facing \
       --set ingress.annotations."alb\.ingress\.kubernetes\.io\/target-type"=instance
     ```
-2. Check if the installation success.
+2. Kiểm tra việc cài đặt thành công.
   {{% notice note %}}
-  It will take some time for the Wordpress applications to be successfully created.
+  Sẽ mất một thời gian để tạo thành công ứng dụng Wordpress.
   {{% /notice %}}
-  - PVC check ``kubectl get pvc``.
+  - Kiểm tra PVC ``kubectl get pvc``.
     ```
     root@ip-10-0-3-71:~# kubectl get pvc
     NAME                        STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
     data-my-release-mariadb-0   Bound    pvc-15f668fd-24f5-4dc0-82ae-95db04b89cc5   8Gi        RWX            efs-sc         <unset>                 2m8s
     my-release-wordpress        Bound    pvc-ac35fe2b-5c94-4d62-9a0b-00a0862c4e36   10Gi       RWX            efs-sc         <unset>                 2m8s
     ```
-  - All check ``kubectl get all``.
+  - Kiểm tra các thành phần khác ``kubectl get all``.
     ```
     root@ip-10-0-3-71:~# kubectl get all
     NAME                                        READY   STATUS    RESTARTS      AGE
@@ -59,15 +59,15 @@ In this step, we will deploy the **Wordpress** application on our **EKS** cluste
     statefulset.apps/my-release-mariadb   1/1     5m20s
     ```
 
-3. Get **Wordpress** application Public URL. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
-  - On the left panel, scroll down and click **Load Balancers**.
-  - Choose **k8s-default-myreleas-65aed09cf0** load balancer and click **Copy** icon on the **DNS name** **k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com**.
+3. Lấy URL công cộng của ứng dụng **Wordpress**. Đi đến [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
+  - Ở bảng bên trái, kéo xuống và bấm **Load Balancers**.
+  - Chọn **k8s-default-myreleas-65aed09cf0** load balancer và bấm biểu tượng **Copy** ở **DNS name** **k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com**.
   ![Deploy](/images/6.deploy/ws01-deploy01.png)
 
-4. Open new browser tab.
-  - User page: ``http://k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com``.
+4. Mở một tab trình duyệt mới.
+  - Trang người dùng: ``http://k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com``.
   ![Deploy](/images/6.deploy/ws01-deploy02.png)
-  - Admin page: ``http://k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com/admin``.
+  - Trang quản trị: ``http://k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com/admin``.
   ![Deploy](/images/6.deploy/ws01-deploy03.png)
 
-So, we have completed the deployment of Wordpress application on EKS lab.
+Vậy là chúng ta đã hoàn thành bài lab về việc triển khai ứng dụng Wordpress trên cụm EKS.

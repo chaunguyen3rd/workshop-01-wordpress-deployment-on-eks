@@ -73,7 +73,7 @@ Read more: https://github.com/kubernetes-sigs/aws-efs-csi-driver
 
 9. At **Edit trust policy** section.
   - Edit the current config as below.
-    +  Change ``arn:aws:iam::017820706022:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE`` value to your ARN value from **step 2**.
+    + Change ``arn:aws:iam::017820706022:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE`` value to your ARN value from **step 2**.
     + Change ``oidc.eks.us-east-1.amazonaws.com/id/89D8A1B6165D0BD767C1B51B1C9150EE`` value to your Provider value from **step 2**.
     ```
     {

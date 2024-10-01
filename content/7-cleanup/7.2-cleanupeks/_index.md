@@ -35,7 +35,7 @@ pre : " <b> 7.2 </b> "
   - At the popup, enter **labEKSCluster01** and click **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup05.png)
   {{% notice note %}}
-  It will take some time for the Node group to be successfully deleted.
+  It will take some time for the EKS cluster to be successfully deleted.
   {{% /notice %}}
 
 Next, we will cleanup EFS.

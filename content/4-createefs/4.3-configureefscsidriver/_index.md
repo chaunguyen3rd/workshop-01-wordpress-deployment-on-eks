@@ -38,7 +38,7 @@ In this step, we will configure our EFS CSI driver.
 #### Configure EFS CSI driver
 1. Create **efs-csi-controller-sa** service account.
   - Save this **aws-efs-csi-driver-sa.yaml** file.
-    + Change ``arn:aws:iam::017820706022:role/labEKSEFSCSIDriverRole`` to your labEKSEFSCSIDriverRole's ARN value.
+    + Change ``arn:aws:iam::017820706022:role/labEKSEFSCSIDriverRole`` to your **labEKSEFSCSIDriverRole**'s ARN value.
     ```
     # aws-efs-csi-driver-sa.yaml
     apiVersion: v1

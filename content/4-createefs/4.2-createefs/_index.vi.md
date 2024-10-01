@@ -1,36 +1,37 @@
 ---
-title : "Create EFS"
+title : "Tạo EFS"
 date : "`r Sys.Date()`"
 weight : 2
 chapter : false
 pre : " <b> 4.2 </b> "
 ---
 
-1. Go to [EFS service management console](https://console.aws.amazon.com/efs/home)
-  - Click **File systems**.
-  - Click **Create file system**.
+### Tạo EFS
+1. Đi đến [EFS service management console](https://console.aws.amazon.com/efs/home)
+  - Bấm **File systems**.
+  - Bấm **Create file system**.
   ![EC2](/images/2.prerequisite/ws01-createefs01.png)
 
-2. At the **Create file system** popup.
-  - Fill the **Name** field with **labEFS01** value.
-  - Fill the **Virtual Private Cloud (VPC)** with **labVCP01** value.
-  - Click the **Customize** button.
+2. Ở popup **Create file system**.
+  - Điền vào trường **Name** với giá trị **labEFS01**.
+  - Điền vào **Virtual Private Cloud (VPC)** với giá trị **labVCP01**.
+  - Bấm **Customize**.
   ![EC2](/images/2.prerequisite/ws01-createefs02.png)
 
-3. At the **Step 1: File system settings** section.
-  - Leave all fields in this step as default.
-  - Click **Next** button.
+3. Ở mục **Step 1: File system settings**.
+  - Giữ mọi trường mặc định.
+  - Bấm **Next**.
   ![EC2](/images/2.prerequisite/ws01-createefs03.png)
 
-4. At the **Step 2: Network access** section.
-  - On **us-east-1a** Availability zone, choose **labPrivateSubnet01** subnetID and **labEFSSG01** security groups.
-  - On **us-east-1b** Availability zone, choose **labPrivateSubnet02** subnetID and **labEFSSG01** security groups.
-  - Click **Next** button.
+4. Ở mục **Step 2: Network access**.
+  - Ở **us-east-1a** Availability zone, chọn **labPrivateSubnet01** subnetID and **labEFSSG01** security groups.
+  - Ở **us-east-1b** Availability zone, chọn **labPrivateSubnet02** subnetID and **labEFSSG01** security groups.
+  - Bấm **Next**.
   ![EC2](/images/2.prerequisite/ws01-createefs04.png)
 
-5. Leave as default with **Step 3** and click **Next**.
+5. Giữ mặc định như **Step 3** và bấm **Next**.
 
-6. Leave as default with **Step 4** and click **Create**.
+6. Giữ mặc định như **Step 4** và bấm **Create**.
   ![EC2](/images/2.prerequisite/ws01-createefs05.png)
    
-Next, we will configure the EFS CSI driver.
+Tiếp theo, chúng ta sẽ cấu hình EFS CSI driver.

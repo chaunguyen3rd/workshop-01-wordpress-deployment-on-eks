@@ -1,31 +1,31 @@
 ---
-title : "Install ALB Controller"
+title : "Cài đặt ALB Controller"
 date :  "`r Sys.Date()`" 
 weight : 5 
 chapter : false
 pre : " <b> 5. </b> "
 ---
 
-#### Overall
-**The AWS Load Balancer Controller** is a Kubernetes controller that manages AWS Elastic Load Balancers (ELBs) for a Kubernetes cluster running on Amazon EKS or self-managed Kubernetes on AWS. It automates the creation and management of Application Load Balancers (ALBs) and Network Load Balancers (NLBs) to route traffic to Kubernetes services.
+#### Tổng quan
+**The AWS Load Balancer Controller** là bộ điều khiển Kubernetes quản lý AWS Elastic Load Balancer (ELB) cho cụm Kubernetes chạy trên Amazon EKS hoặc Kubernetes tự quản lý trên AWS. Nó tự động tạo và quản lý Application Load Balancer (ALB) và Network Load Balancer (NLB) để định tuyến lưu lượng đến các dịch vụ Kubernetes.
 
-In this lab, we will use **AWS Application Load Balancer (ALB)**.
+Trong bài lab này, chúng ta sẽ sử dụng **AWS Application Load Balancer (ALB)**.
 
 {{% notice info %}}
-Read more: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html
+Đọc thêm: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html
 {{% /notice %}}
 
-#### Install **eksctl** tool.
-1. Open your terminal.
+#### Cài đặt công cụ **eksctl**.
+1. Mở terminal của bạn.
     ```
       ssh ubuntu@18.206.88.146 -i ~/.ssh/labBastionHostSSHKey01.pem
     ```
-  - Change the ``18.206.88.146`` to your EC2's Public IP address.
-  - Change the ``~/.ssh/labBastionHostSSHKey01.pem`` to the path of the Key pair you downloaded when creating your EC2 instance.
-  - After successful login to your EC2, switch to sudo user with ``sudo su``.
+  - Thay thế the ``18.206.88.146`` với địa chỉ public IP của máy EC2 của bạn.
+  - Thay đổi ``~/.ssh/labBastionHostSSHKey01.pem`` thành đường dẫn của Key pair bạn đã tải về khi tạo ra máy chủ EC2.
+  - Sau khi đăng nhập thành công vào EC2, chuyển sang sudo user với câu lệnh ``sudo su``.
 
-2. Install **eksctl**.
-  - Run this code block.
+2. Cài đặt **eksctl**.
+  - Chạy đoạn code sau.
     ```
     # for ARM systems, set ARCH to: `arm64`, `armv6` or `armv7`
     ARCH=amd64
@@ -40,22 +40,22 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-co
 
     sudo mv /tmp/eksctl /usr/local/bin
     ```
-  - Confirm the installation with ``eksctl version``
+  - Kiểm tra việc cài đặt thành công với câu lệnh ``eksctl version``
     ```
     root@ip-10-0-1-234:~# eksctl version
     0.190.0
     ```
 
-#### Install AWS Load Balancer Controller with Helm
+#### Cài đặt AWS Load Balancer Controller bằng Helm
 1. Create IAM Role using **eksctl**.
-  - Download this IAM policy for AWS Load Balancer Controller ``curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.7.2/docs/install/iam_policy.json``.
-  - Create an IAM policy using the policy downloaded in the previous step.
+  - Tải chính sách IAM này cho AWS Load Balancer Controller ``curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.7.2/docs/install/iam_policy.json``.
+  - Tạo một chính sách IAM bằng cách sử dụng chính sách đả tải ở bước trước.
     ```
     aws iam create-policy \
       --policy-name labAWSLoadBalancerControllerPolicy \
       --policy-document file://iam_policy.json
     ```
-  - Verify the **IAM policy** creation.
+  - Xác minh việc tạo **IAM policy** thành công.
     ```
     root@ip-10-0-1-234:~# aws iam create-policy \
       --policy-name labAWSLoadBalancerControllerPolicy \
@@ -76,8 +76,8 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-co
     }
     ```
 
-2. Create IAM Role using **eksctl**.
-  - Run this code block.
+2. Tạo vai trò IAM bằng cách sử dụng **eksctl**.
+  - Chạy đoạn code này.
     + Change ``labEKSCluster01`` to your's cluster name.
     + Change ``017820706022`` to your account ID.
     ```
@@ -89,18 +89,18 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-co
       --attach-policy-arn=arn:aws:iam::017820706022:policy/labAWSLoadBalancerControllerPolicy \
       --approve
     ```
-  - Confirm that creation success.
+  - Kiểm tra việc cài đặt thành công.
     ```
     root@ip-10-0-1-234:~# kubectl -n kube-system get serviceaccount | grep aws-load-balancer-controller
     aws-load-balancer-controller                  0         81s
     ```
 
-3. Install AWS Load Balancer Controller. 
-  - Add **eks-charts** Helm chart repository ``helm repo add eks https://aws.github.io/eks-charts``.
-  - Update your local repo ``helm repo update eks``.
-  - Install the **AWS Load Balancer Controller**.
-    + Change ``labEKSCluster01`` to your's cluster name.
-    + Change ``vpc-091882644e7c1e207`` to your's VPC ID.
+3. Cài đặt AWS Load Balancer Controller. 
+  - Thêm **eks-charts** Helm chart repository ``helm repo add eks https://aws.github.io/eks-charts``.
+  - Cập nhật repo của bạn ``helm repo update eks``.
+  - Cài đặt **AWS Load Balancer Controller**.
+    + Thay đổi ``labEKSCluster01`` thành tên cụm EKS của bạn.
+    + Thay đổi ``vpc-091882644e7c1e207`` thành VPC ID của bạn.
     ```
     helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
       -n kube-system \
@@ -111,7 +111,7 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-co
       --set vpcId=vpc-091882644e7c1e207
     ```
 
-4. Verify that the controller is installed.
+4. Kiểm tra việc cài đặt thành công.
     ```
     root@ip-10-0-1-234:~# helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
       -n kube-system \
@@ -133,23 +133,23 @@ Read more: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-co
     aws-load-balancer-controller   2/2     2            2           58s
     ```
 
-#### Add needed tags for Public subnet
+#### Thêm các tag cần thiết cho mạng con công cộng
 {{% notice info %}}
-Read more: https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html
+Đọc thêm: https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html
 {{% /notice %}}
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-  - Click **Subnets**.
-  - Choose **labPublicSubnet01**.
-  - Click **Tags**.
-  - Click **Manage tags**.
+1. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
+  - Bấm **Subnets**.
+  - Chọn **labPublicSubnet01**.
+  - Bấm **Tags**.
+  - Bấm **Manage tags**.
   ![VPC](/images/5.alb/ws01-alb01.png)
 
-2. At **Manage tags** page.
-  - Click **Add new tag**.
-  - Enter **kubernetes.io/role/elb** key and **1** value.
-  - Click **Save**.
+2. Ở trang **Manage tags**.
+  - Bấm **Add new tag**.
+  - Nhập key **kubernetes.io/role/elb** và giá trị **1**.
+  - Bấm **Save**.
   
-3. Do the same with **labPublicSubnet02**.
+3. Làm tương tự với **labPublicSubnet02**.
   ![VPC](/images/5.alb/ws01-alb03.png)
 
-Next, we will deploy **Wordpress** application.
+Tiếp theo, chúng ta sẽ triển khai ứng dụng **Wordpress**

@@ -1,49 +1,49 @@
 ---
-title : "Cleanup IAM"
+title : "Dọn dẹp IAM"
 date : "`r Sys.Date()`"
 weight : 6
 chapter : false
 pre : " <b> 7.6 </b> "
 ---
 
-### Cleanup IAM roles and policies
-#### Cleanup Access key
-1. Go to [IAM management console](https://console.aws.amazon.com/iam/home)
-  - Click **Users**.
-  - Choose user that you created the **Access key** before.
+### Dọn dẹp vai trò và chính sách IAM
+#### Dọn dẹp Access key
+1. Đi đến [IAM management console](https://console.aws.amazon.com/iam/home)
+  - Bấm **Users**.
+  - Chọn người dùng mà đã dùng **Access key** ở các bước trước.
   ![Cleanup](/images/7.cleanup/ws01-cleanup29.png)
 
-2. At **User** page.
-  - Choose **Security credentials**.
-  - Click **Actions** and click **Delete**.
+2. Ở trang **User**.
+  - Chọn **Security credentials**.
+  - Bấm **Actions** và bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup30.png)
-  - At the popup, click **Deactivate**, enter **Key** name and click **Delete**.
+  - Ở popup, bấm **Deactivate**, nhập **Key** và bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup31.png)
 
-#### Cleanup IAM roles and policies
-1. Go to [IAM management console](https://console.aws.amazon.com/iam/home).
-  - Click **Roles**.
-  - Choose **Roles** as image below.
-  - Click **Delete**.
+#### Dọn dẹp vai trò và chính sách IAM
+1. Đi đến [IAM management console](https://console.aws.amazon.com/iam/home).
+  - Bấm **Roles**.
+  - Chọn **Roles** như hình bên dưới.
+  - Bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup32.png)
-  - At the popup, enter **delete** and click **Delete**.
+  - Ở popup, nhập **delete** và bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup33.png)
 
-2. At [IAM management console](https://console.aws.amazon.com/iam/home) page.
-  - Click **Policies**.
-  - Choose **Customer managed** at **Filter by Type** option.
-  - Choose **labAWSLoadBalancerControllerPolicy**.
-  - Click **Delete**.
+2. Ở trang [IAM management console](https://console.aws.amazon.com/iam/home).
+  - Bấm **Policies**.
+  - Chọn **Customer managed** ở tùy chọn **Filter by Type**.
+  - Chọn **labAWSLoadBalancerControllerPolicy**.
+  - Bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup34.png)
-  - At the popup, enter **labAWSLoadBalancerControllerPolicy** and click **Delete**.
+  - Ở popup, nhập **labAWSLoadBalancerControllerPolicy** và bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup35.png)
 
-3. At [IAM management console](https://console.aws.amazon.com/iam/home) page.
-  - Click **Identity providers**.
-  - Choose **Your provider** that created before.
-  - Click **Delete**.
+3. Ở trang [IAM management console](https://console.aws.amazon.com/iam/home).
+  - Bấm **Identity providers**.
+  - Chọn **Your provider** mà đã tạo trước kia.
+  - Bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup36.png)
-  - At the popup, enter **confirm** and click **Delete**.
+  - Ở popup, nhập **confirm** và bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup37.png)
 
-So we finish all resources needed for this lab.
+Vậy chúng ta đã hoàn thành việc dọn dẹp toàn bộ tài nguyên cần thiết cho bài lab này.

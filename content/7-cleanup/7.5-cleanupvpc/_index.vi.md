@@ -1,90 +1,90 @@
 ---
-title : "Cleanup VPC"
+title : "Dọn dẹp VPC"
 date : "`r Sys.Date()`"
 weight : 5
 chapter : false
 pre : " <b> 7.5 </b> "
 ---
 
-### Cleanup VPC
-#### Cleanup Route table
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-  - Click **Route tables**.
-  - Choose **labPublicRT01**.
-  - Click **Subnet associations**.
-  - Click **Edit subnet associations**.
+### Dọn dẹp VPC
+#### Dọn dẹp Route table
+1. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
+  - Bấm **Route tables**.
+  - Chọn **labPublicRT01**.
+  - Bấm **Subnet associations**.
+  - Bấm **Edit subnet associations**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup13.png)
 
-2. At **Edit subnet associations** page.
-  - Unchecked all available subnets.
-  - Click **Save associations**.
+2. Ở trang **Edit subnet associations**.
+  - Bỏ chọn tất các các mạng con có sẵn
+  - Bấm **Save associations**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup14.png)
 
-3. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-  - Click **Route tables**.
-  - Choose **labPrivateRT01**.
-  - Click **Subnet associations**.
-  - Click **Edit subnet associations**.
+3. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
+  - Bấm **Route tables**.
+  - Chọn **labPrivateRT01**.
+  - Bấm **Subnet associations**.
+  - Bấm **Edit subnet associations**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup15.png)
 
-4. At **Edit subnet associations** page.
-  - Unchecked all available subnets.
-  - Click **Save associations**.
+4. Ở trang **Edit subnet associations**.
+  - Bỏ chọn tất các các mạng con có sẵn
+  - Bấm **Save associations**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup14.png)
 
-5. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-  - Click **Route tables**.
-  - Choose **labPrivateRT01** and **labPublicRT01**.
-  - Click **Actions**.
-  - Click **Delete route table**.
+5. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
+  - Bấm **Route tables**.
+  - Chọn **labPrivateRT01** và **labPublicRT01**.
+  - Bấm **Actions**.
+  - Bấm **Delete route table**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup16.png)
-  - At the popup, enter **delete** and click **Delete**.
+  - Ở popup, nhập **delete** và bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup17.png)
 
 #### Cleanup NAT gateways
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-  - Click **NAT gateways**.
-  - Choose **labNATGW01**.
-  - Click **Actions**.
-  - Click **Delete NAT gateway**.
+1. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
+  - Bấm **NAT gateways**.
+  - Chọn **labNATGW01**.
+  - Bấm **Actions**.
+  - Bấm **Delete NAT gateway**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup18.png)
 
-2. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-  - Click **Elastic IPs**.
-  - Click on **52.6.199.235**. Change ``52.6.199.235`` to your **Elastic IP**.
-  - Click **Actions**.
-  - Click **Release Elastic IP addresses**.
+2. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
+  - Bấm **Elastic IPs**.
+  - Bấm **52.6.199.235**. Thay đổi ``52.6.199.235`` thành **Elastic IP** của bạn.
+  - Bấm **Actions**.
+  - Bấm **Release Elastic IP addresses**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup19.png)
-  - At the popup, click **Release**.
+  - Ở popup, bấm **Release**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup20.png)
 
 #### Cleanup Internet gateways
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-  - Click **Internet gateways**.
-  - Choose **labIGW01**.
-  - Click **Actions**.
-  - Click **Detach from VPC**.
+1. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
+  - Bấm **Internet gateways**.
+  - Chọn **labIGW01**.
+  - Bấm **Actions**.
+  - Bấm **Detach from VPC**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup21.png)
-  - At the popup, click **Detach internet gateway**.
+  - Ở popup, bấm **Detach internet gateway**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup22.png)
 
 2. At [VPC service management console](https://console.aws.amazon.com/vpc/home) page.
-  - Click **Internet gateways**.
-  - Choose **labIGW01**.
-  - Click **Actions**.
-  - Click **Delete internet gateway**.
+  - Bấm **Internet gateways**.
+  - Chọn **labIGW01**.
+  - Bấm **Actions**.
+  - Bấm **Delete internet gateway**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup23.png)
-  - At the popup, type **delete** and click **Delete internet gateway**.
+  - At the popup, gõ **delete** và bấm **Delete internet gateway**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup24.png)
 
 #### Cleanup VPC
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-  - Click **Your VPCs**.
-  - Choose **labVPC01**.
-  - Click **Actions**.
-  - Click **Delete VPC**.
+1. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
+  - Bấm **Your VPCs**.
+  - Chọn **labVPC01**.
+  - Bấm **Actions**.
+  - Bấm **Delete VPC**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup27.png)
-  - At the popup, type **delete** and click **Delete**.
+  - Ở popup, gõ **delete** và bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup28.png)
 
-Next, we will cleanup IAM roles and policies.
+Tiếp theo, chúng ta sẽ dọn dẹp vai trò và chính sách IAM.

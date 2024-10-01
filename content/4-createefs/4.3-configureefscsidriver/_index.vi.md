@@ -1,26 +1,26 @@
 ---
-title : "Configure EFS CSI driver"
+title : "Cấu hình EFS CSI driver"
 date : "`r Sys.Date()`"
 weight : 3
 chapter : false
 pre : " <b> 4.3 </b> "
 ---
 
-In this step, we will configure our EFS CSI driver.
+Ở bước này, chúng ta sẽ cấu hình EFS CSI driver của chúng ta.
 
-#### Install **helm**
-**Helm** is a package manager for Kubernetes that simplifies the process of deploying and managing applications within a Kubernetes cluster. It uses "charts," which are pre-configured templates that define the structure, dependencies, and configuration options of an application or service.
+#### Cài đặt **helm**
+**Helm** là trình quản lý gói cho Kubernetes giúp đơn giản hóa quá trình triển khai và quản lý các ứng dụng trong cụm Kubernetes. Nó sử dụng "biểu đồ", là các mẫu được cấu hình sẵn để xác định cấu trúc, sự phụ thuộc và các tùy chọn cấu hình của ứng dụng hoặc dịch vụ.
 
-1. Open your terminal.
+1. Mở terminal của bạn.
     ```
       ssh ubuntu@18.206.88.146 -i ~/.ssh/labBastionHostSSHKey01.pem
     ```
-  - Change the ``18.206.88.146`` to your EC2's Public IP address.
-  - Change the ``~/.ssh/labBastionHostSSHKey01.pem`` to the path of the Key pair you downloaded when creating your EC2 instance.
-  - After successful login to your EC2, switch to sudo user with ``sudo su``.
+  - Thay thế the ``18.206.88.146`` với địa chỉ public IP của máy EC2 của bạn.
+  - Thay đổi ``~/.ssh/labBastionHostSSHKey01.pem`` thành đường dẫn của Key pair bạn đã tải về khi tạo ra máy chủ EC2.
+  - Sau khi đăng nhập thành công vào EC2, chuyển sang sudo user với câu lệnh ``sudo su``.
 
-2. Install **helm**
-  - Run this code block
+2. Cài đặt **helm**
+  - Chạy đoạn code này.
     ```
     curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
     sudo apt-get install apt-transport-https --yes
@@ -28,17 +28,17 @@ In this step, we will configure our EFS CSI driver.
     sudo apt-get update
     sudo apt-get install helm
     ```
-  - Confirm the installation with ``helm version``.
+  - Kiểm tra việc cài đặt thành công với câu lệnh ``helm version``.
     ```
     root@ip-10-0-1-234:~# helm version
     version.BuildInfo{Version:"v3.16.1", GitCommit:"5a5449dc42be07001fd5771d56429132984ab3ab", GitTreeState:"clean", GoVersion:"go1.22.7"}
     root@ip-10-0-1-234:~#
     ```
 
-#### Configure EFS CSI driver
-1. Create **efs-csi-controller-sa** service account.
-  - Save this **aws-efs-csi-driver-sa.yaml** file.
-    + Change ``arn:aws:iam::017820706022:role/labEKSEFSCSIDriverRole`` to your labEKSEFSCSIDriverRole's ARN value.
+#### Cấu hình EFS CSI driver
+1. Tạo tài khoản dịch vụ **efs-csi-controller-sa**.
+  - Lưu lại file **aws-efs-csi-driver-sa.yaml**.
+    + Thay đổi ``arn:aws:iam::017820706022:role/labEKSEFSCSIDriverRole`` thành giá trị **labEKSEFSCSIDriverRole**'s ARN.
     ```
     # aws-efs-csi-driver-sa.yaml
     apiVersion: v1
@@ -51,16 +51,16 @@ In this step, we will configure our EFS CSI driver.
       annotations:
         eks.amazonaws.com/role-arn: arn:aws:iam::017820706022:role/labEKSEFSCSIDriverRole
     ```
-  - Run ``kubectl apply -f aws-efs-csi-driver-sa.yaml``.
+  - Chạy ``kubectl apply -f aws-efs-csi-driver-sa.yaml``.
     ```
     root@ip-10-0-1-234:~# kubectl get -n kube-system sa | grep efs-csi-controller-sa
     efs-csi-controller-sa                         0         106s
     ```
 
-2. Install the driver using **Helm**
-  - Add the Helm repo: ``helm repo add aws-efs-csi-driver https://kubernetes-sigs.github.io/aws-efs-csi-driver/``.
-  - Update the repo: ``helm repo update aws-efs-csi-driver``
-  - Install a release of the driver using the **Helm** chart.
+2. Cài đặt driver using **Helm**
+  - Thêm Helm repo: ``helm repo add aws-efs-csi-driver https://kubernetes-sigs.github.io/aws-efs-csi-driver/``.
+  - Cập nhật repo: ``helm repo update aws-efs-csi-driver``
+  - Cài đặt một phiên bản của driver bằng cách sử dụng biểu đồ **Helm**.
     ```
     helm upgrade --install aws-efs-csi-driver \
       --namespace kube-system \
@@ -68,7 +68,7 @@ In this step, we will configure our EFS CSI driver.
       --set controller.serviceAccount.name=efs-csi-controller-sa \
       aws-efs-csi-driver/aws-efs-csi-driver
     ```
-  - Check if creation success.
+  - Kiểm tra việc cài đặt thành công.
     ```
     root@ip-10-0-1-234:~# helm repo add aws-efs-csi-driver https://kubernetes-sigs.github.io/aws-efs-csi-driver/
     "aws-efs-csi-driver" has been added to your repositories
@@ -101,14 +101,14 @@ In this step, we will configure our EFS CSI driver.
     root@ip-10-0-1-234:~#
     ```
 
-#### Create Dynamic Provisioning StorageClass
-1. Go to [EFS service management console](https://console.aws.amazon.com/efs/home)
-  - Click **File systems**.
-  - Copy **fs-0003fc3d543db9be6**.
+#### Tạo Dynamic Provisioning StorageClass
+1. Đi đến [EFS service management console](https://console.aws.amazon.com/efs/home)
+  - Bấm **File systems**.
+  - Sao chép **fs-0003fc3d543db9be6**.
   ![EC2](/images/4.configure/ws01-configure13.png)
 
-2. Create **StorageClass**.
-  - Back to your terminal, save this **StorageClass** manifest.
+2. Tạo **StorageClass**.
+  - Quay lại terminal của bạn, Lưu lại manifest **StorageClass**.
     ```
     # efs-sc.yaml
     kind: StorageClass
@@ -127,9 +127,9 @@ In this step, we will configure our EFS CSI driver.
       ensureUniqueDirectory: "true" # optional
       reuseAccessPoint: "false" # optional
     ```
-  - Change ``fileSystemId: fs-92107410`` to your FileSystemID from the previous step.
-  - Run ``kubectl apply -f efs-sc.yaml``
-  - Check if the creation success.
+  - Thay thế ``fileSystemId: fs-92107410`` thành FileSystemID của bạn đã tạo ra ở bước trước.
+  - Chạy ``kubectl apply -f efs-sc.yaml``
+  - Kiểm tra việc cài đặt thành công.
     ```
     root@ip-10-0-1-234:~# kubectl apply -f efs-sc.yaml
     storageclass.storage.k8s.io/efs-sc created
@@ -139,4 +139,4 @@ In this step, we will configure our EFS CSI driver.
     gp2      kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   false                  3d20h
     ```
 
-Next, we will configure **labNodeGroupsRole**.
+Tiếp theo, chúng ta sẽ cấu hình **labNodeGroupsRole**.

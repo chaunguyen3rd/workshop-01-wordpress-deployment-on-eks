@@ -1,27 +1,27 @@
 ---
-title : "Configure NodeGroup role"
+title : "Cấu hình vai trò NodeGroup"
 date : "`r Sys.Date()`"
 weight : 4
 chapter : false
 pre : " <b> 4.4 </b> "
 ---
 
-In this step, we will configure NodeGroup role to access the new EFS.
+Ở bước này, chúng ta sẽ cấu hình vai trò NodeGroup để truy cập đến EFS.
 
-#### Configure **labNodeGroupsRole**
-1. Go to [IAM management console](https://console.aws.amazon.com/iam/home)
-  - Click **Roles**.
-  - Choose **labNodeGroupsRole**.
+#### Cấu hình **labNodeGroupsRole**
+1. Đi đến [IAM management console](https://console.aws.amazon.com/iam/home)
+  - Bấm **Roles**.
+  - Chọn **labNodeGroupsRole**.
   ![VPC](/images/4.configure/ws01-configure14.png)
 
-2. At **labNodeGroupsRole** setting page.
-  - Click **Add permission** and choose **Attach policies**.
+2. Ở trang thiết lập **labNodeGroupsRole**.
+  - Bấm **Add permission** and chọn **Attach policies**.
   ![VPC](/images/4.configure/ws01-configure15.png)
 
-3. At **Add permission** page.
-  - Find **AmazonEFSCSIDriverPolicy** at search box.
-  - Choose **AmazonEFSCSIDriverPolicy** policy.
-  - Click **Add permissions**.
+3. Ở trang **Add permission**.
+  - Tìm **AmazonEFSCSIDriverPolicy** ở ô tìm kiếm.
+  - Chọn chính sách **AmazonEFSCSIDriverPolicy**.
+  - Bấm **Add permissions**.
   ![VPC](/images/4.configure/ws01-configure16.png)
 
-Next, we will install **ALB Controller**.
+Tiếp theo, chúng ta sẽ cài đặt **ALB Controller**.

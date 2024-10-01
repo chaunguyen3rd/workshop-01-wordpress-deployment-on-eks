@@ -1,21 +1,21 @@
 ---
-title : "Cleanup EFS"
+title : "Dọn dẹp EFS"
 date : "`r Sys.Date()`"
 weight : 3
 chapter : false
 pre : " <b> 7.3 </b> "
 ---
 
-### Cleanup EFS
-1. Go to [EFS service management console](https://console.aws.amazon.com/efs/home)
-  - Click **File systems**.
-  - Choose **labEFS01**.
+### Dọn dẹp EFS
+1. Đi đến [EFS service management console](https://console.aws.amazon.com/efs/home)
+  - Bấm **File systems**.
+  - Chọn **labEFS01**.
   ![EC2](/images/4.configure/ws01-configure13.png)
 
-2. At **labEFS01** page.
-  - Click **Delete**.
+2. Ở trang **labEFS01**.
+  - Bấm **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup06.png)
-  - At the popup, enter **fs-0003fc3d543db9be6** and click **Confirm**.
+  - Ở popup, nhập **fs-0003fc3d543db9be6** và bấm **Confirm**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup07.png)
 
-Next, we will cleanup EC2 linux instance.
+Tiếp theo, chúng ta sẽ dọn dẹp máy chủ EC2 linux.

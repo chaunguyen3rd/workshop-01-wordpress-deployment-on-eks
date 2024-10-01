@@ -16,7 +16,7 @@ pre : " <b> 7.4 </b> "
   - At the popup, click **Terminate (Delete)**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup09.png)
 
-2. At [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
+2. At [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home) page.
   - On the left panel, scroll down and click **Key Pairs**.
   - Choose **labBastionHostSSHKey01**.
   - Click **Actions**.

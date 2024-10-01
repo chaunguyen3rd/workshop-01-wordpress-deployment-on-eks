@@ -46,4 +46,4 @@ pre : " <b> 7.6 </b> "
   - At the popup, enter **confirm** and click **Delete**.
   ![Cleanup](/images/7.cleanup/ws01-cleanup37.png)
 
-So we finish all resources needed for this lab.
+So we finish cleaning up all resources needed for this lab.

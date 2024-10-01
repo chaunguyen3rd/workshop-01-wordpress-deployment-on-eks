@@ -6,6 +6,7 @@ chapter : false
 pre : " <b> 4.2 </b> "
 ---
 
+### Create EFS
 1. Go to [EFS service management console](https://console.aws.amazon.com/efs/home)
   - Click **File systems**.
   - Click **Create file system**.
