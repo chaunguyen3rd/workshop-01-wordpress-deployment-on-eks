@@ -155,7 +155,7 @@ Trong bài lab này, chúng ta sẽ sử dụng **AWS Application Load Balancer 
 - Chọn **labPublicSubnet01**.
 - Bấm **Tags**.
 - Bấm **Manage tags**.
-  ![VPC](/workshop.chaunguyen.site/images//5.alb/ws01-alb01.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/5.alb/ws01-alb01.png)
 
 2. Ở trang **Manage tags**.
 
@@ -164,6 +164,6 @@ Trong bài lab này, chúng ta sẽ sử dụng **AWS Application Load Balancer 
 - Bấm **Save**.
 
 3. Làm tương tự với **labPublicSubnet02**.
-   ![VPC](/workshop.chaunguyen.site/images//5.alb/ws01-alb03.png)
+   ![VPC](/workshop-01-wordpress-deployment-on-eks/images/5.alb/ws01-alb03.png)
 
 Tiếp theo, chúng ta sẽ triển khai ứng dụng **Wordpress**

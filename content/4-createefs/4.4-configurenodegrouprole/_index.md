@@ -14,18 +14,18 @@ In this step, we will configure NodeGroup role to access the new EFS.
 
 - Click **Roles**.
 - Choose **labNodeGroupsRole**.
-  ![VPC](/workshop.chaunguyen.site/images//4.configure/ws01-configure14.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure14.png)
 
 2. At **labNodeGroupsRole** setting page.
 
 - Click **Add permission** and choose **Attach policies**.
-  ![VPC](/workshop.chaunguyen.site/images//4.configure/ws01-configure15.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure15.png)
 
 3. At **Add permission** page.
 
 - Find **AmazonEFSCSIDriverPolicy** at search box.
 - Choose **AmazonEFSCSIDriverPolicy** policy.
 - Click **Add permissions**.
-  ![VPC](/workshop.chaunguyen.site/images//4.configure/ws01-configure16.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure16.png)
 
 Next, we will install **ALB Controller**.

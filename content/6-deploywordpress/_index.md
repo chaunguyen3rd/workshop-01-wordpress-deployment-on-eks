@@ -66,13 +66,13 @@ In this step, we will deploy the **Wordpress** application on our **EKS** cluste
 
 - On the left panel, scroll down and click **Load Balancers**.
 - Choose **k8s-default-myreleas-65aed09cf0** load balancer and click **Copy** icon on the **DNS name** **k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com**.
-  ![Deploy](/workshop.chaunguyen.site/images//6.deploy/ws01-deploy01.png)
+  ![Deploy](/workshop-01-wordpress-deployment-on-eks/images/6.deploy/ws01-deploy01.png)
 
 4. Open new browser tab.
 
 - User page: `http://k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com`.
-  ![Deploy](/workshop.chaunguyen.site/images//6.deploy/ws01-deploy02.png)
+  ![Deploy](/workshop-01-wordpress-deployment-on-eks/images/6.deploy/ws01-deploy02.png)
 - Admin page: `http://k8s-default-myreleas-65aed09cf0-694896043.us-east-1.elb.amazonaws.com/admin`.
-  ![Deploy](/workshop.chaunguyen.site/images//6.deploy/ws01-deploy03.png)
+  ![Deploy](/workshop-01-wordpress-deployment-on-eks/images/6.deploy/ws01-deploy03.png)
 
 So, we have completed the deployment of Wordpress application on EKS lab.

@@ -37,6 +37,6 @@ pre: " <b> 7.1 </b> "
 
 - On the left panel, scroll down and click **Load Balancers**.
 - This time, we won't see **k8s-default-myreleas-65aed09cf0** load balancer anymore.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup01.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup01.png)
 
 Next, we will cleanup EKS cluster.

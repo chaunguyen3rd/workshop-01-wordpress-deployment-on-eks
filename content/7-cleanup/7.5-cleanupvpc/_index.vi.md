@@ -16,13 +16,13 @@ pre: " <b> 7.5 </b> "
 - Chọn **labPublicRT01**.
 - Bấm **Subnet associations**.
 - Bấm **Edit subnet associations**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup13.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup13.png)
 
 2. Ở trang **Edit subnet associations**.
 
 - Bỏ chọn tất các các mạng con có sẵn
 - Bấm **Save associations**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup14.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup14.png)
 
 3. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
 
@@ -30,13 +30,13 @@ pre: " <b> 7.5 </b> "
 - Chọn **labPrivateRT01**.
 - Bấm **Subnet associations**.
 - Bấm **Edit subnet associations**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup15.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup15.png)
 
 4. Ở trang **Edit subnet associations**.
 
 - Bỏ chọn tất các các mạng con có sẵn
 - Bấm **Save associations**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup14.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup14.png)
 
 5. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
 
@@ -44,9 +44,9 @@ pre: " <b> 7.5 </b> "
 - Chọn **labPrivateRT01** và **labPublicRT01**.
 - Bấm **Actions**.
 - Bấm **Delete route table**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup16.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup16.png)
 - Ở popup, nhập **delete** và bấm **Delete**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup17.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup17.png)
 
 #### Cleanup NAT gateways
 
@@ -56,7 +56,7 @@ pre: " <b> 7.5 </b> "
 - Chọn **labNATGW01**.
 - Bấm **Actions**.
 - Bấm **Delete NAT gateway**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup18.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup18.png)
 
 2. Đi đến [VPC service management console](https://console.aws.amazon.com/vpc/home)
 
@@ -64,9 +64,9 @@ pre: " <b> 7.5 </b> "
 - Bấm **52.6.199.235**. Thay đổi `52.6.199.235` thành **Elastic IP** của bạn.
 - Bấm **Actions**.
 - Bấm **Release Elastic IP addresses**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup19.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup19.png)
 - Ở popup, bấm **Release**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup20.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup20.png)
 
 #### Cleanup Internet gateways
 
@@ -76,9 +76,9 @@ pre: " <b> 7.5 </b> "
 - Chọn **labIGW01**.
 - Bấm **Actions**.
 - Bấm **Detach from VPC**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup21.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup21.png)
 - Ở popup, bấm **Detach internet gateway**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup22.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup22.png)
 
 2. At [VPC service management console](https://console.aws.amazon.com/vpc/home) page.
 
@@ -86,9 +86,9 @@ pre: " <b> 7.5 </b> "
 - Chọn **labIGW01**.
 - Bấm **Actions**.
 - Bấm **Delete internet gateway**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup23.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup23.png)
 - At the popup, gõ **delete** và bấm **Delete internet gateway**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup24.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup24.png)
 
 #### Cleanup VPC
 
@@ -98,8 +98,8 @@ pre: " <b> 7.5 </b> "
 - Chọn **labVPC01**.
 - Bấm **Actions**.
 - Bấm **Delete VPC**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup27.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup27.png)
 - Ở popup, gõ **delete** và bấm **Delete**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup28.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup28.png)
 
 Tiếp theo, chúng ta sẽ dọn dẹp vai trò và chính sách IAM.

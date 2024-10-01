@@ -14,18 +14,18 @@ pre: " <b> 3.3. </b> "
 
 - Bấm **Clusters**.
 - Chọn **labEKSCluster01**.
-  ![Connect](/workshop.chaunguyen.site/images//4.configure/ws01-configure12.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure12.png)
 
 2. Ở trang **labEKSCluster01**.
 
 - Bấm tab **Access**.
 - Bấm **Create access entry**.
-  ![Connect](/workshop.chaunguyen.site/images//4.configure/ws01-configure08.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure08.png)
 
 3. Ở **step 1: Configure IAM access entry**.
 
 - Thay đổi `arn:aws:iam::017820706022:user/chaunguyen-admin` thành giá trị IAM user của bạn.
-  ![Connect](/workshop.chaunguyen.site/images//4.configure/ws01-configure09.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure09.png)
 - Kéo xuống và bấm **Next**.
 
 4. Ở **step 2: Add access policy**.
@@ -33,12 +33,12 @@ pre: " <b> 3.3. </b> "
 - Chọn trường **AmazonEKSClusterAdminPolicy** ở **Policy name**.
 - Chọn **Add policy**.
 - Chọn **Next**.
-  ![Connect](/workshop.chaunguyen.site/images//4.configure/ws01-configure10.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure10.png)
 
 5. Ở **step 3: Review and create**.
 
 - Giữ mặc định và bấm **Create**.
-  ![Connect](/workshop.chaunguyen.site/images//4.configure/ws01-configure11.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure11.png)
 
 #### Cấu hình cụm EKS
 

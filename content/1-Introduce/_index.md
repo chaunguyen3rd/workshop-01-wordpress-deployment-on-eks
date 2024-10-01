@@ -19,4 +19,4 @@ pre: " <b> 1. </b> "
 
 By the end of this workshop, you could effectively manage and scale WordPress in a cloud-native environment. Through hands-on exercises, you'll know how to containerize WordPress, deploy it on a Kubernetes cluster using EKS, and leverage AWS services to ensure high availability, security, and performance. By the end of the workshop, you'll be prepared to deploy and manage a production-ready WordPress site on EKS, utilizing best practices for cloud-based infrastructure.
 
-![ws01-target](/workshop.chaunguyen.site/images//ws01-target.png)
+![ws01-target](/workshop-01-wordpress-deployment-on-eks/images/ws01-target.png)

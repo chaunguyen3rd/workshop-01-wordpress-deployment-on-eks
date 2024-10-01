@@ -114,7 +114,7 @@ pre: " <b> 4.3 </b> "
 
 - Bấm **File systems**.
 - Sao chép **fs-0003fc3d543db9be6**.
-  ![EC2](/workshop.chaunguyen.site/images//4.configure/ws01-configure13.png)
+  ![EC2](/workshop-01-wordpress-deployment-on-eks/images/4.configure/ws01-configure13.png)
 
 2. Tạo **StorageClass**.
 

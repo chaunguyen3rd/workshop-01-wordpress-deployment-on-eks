@@ -29,7 +29,7 @@ Các tính năng chính của trình điều khiển EFS CSI bao gồm:
 
 - Bấm **Identity providers**.
 - Bấm **Add provider**.
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks11.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks11.png)
 
 2. Ở mục **Add an Identity provider**.
 
@@ -37,15 +37,15 @@ Các tính năng chính của trình điều khiển EFS CSI bao gồm:
 - Ở trường **Provider URL**, điền giá trị bạn đã copy ở bước trước (Kiểm tra **Step 7** ở **3.1 Create EKS cluster**).
 - Ở trường **Audience**, điền giá trị **sts.amazonaws.com**.
 - Bấm **Add provider**.
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks12.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks12.png)
 - Copy giá trị ARN để sử dụng cho các bước kế tiếp.
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks15.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks15.png)
 
 3. Ở mục [IAM management console](https://console.aws.amazon.com/iam/home).
 
 - Bấm **Roles**.
 - Bấm **Create role**.
-  ![VPC](/workshop.chaunguyen.site/images//2.prerequisite/ws01-createrole01.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-createrole01.png)
 
 4. Ở mục **Step 1: Select trusted entity**.
 
@@ -54,32 +54,32 @@ Các tính năng chính của trình điều khiển EFS CSI bao gồm:
   - Chọn giá trị **OpenID Connect provider URL** của cụm EKS của bạn.
   - Chọn **sts.amazonaws.com** ở trường **Audience**.
 - Bấm **Next**.
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks13.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks13.png)
 
 5. Ở mục **Step 2: Add permissions**.
 
 - Nhập **AmazonEFSCSIDriverPolicy** ở hộp **Filter policies**.
 - Chọn **AmazonEFSCSIDriverPolicy** hiện ra ở ô tìm kiếm.
 - Bấm **Next**.
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks16.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks16.png)
 
 6. Ở mục **Step 3: Name, review, and create**.
 
 - Ở mục **Role details**, nhập giá trị **labEKSEFSCSIDriverRole** ở trường **Role name**
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks17.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks17.png)
 - Kéo xuống và bấm **Create role**.
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks18.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks18.png)
 
 7. Ở **Role management console**.
 
 - Chọn vai trò **labEKSEFSCSIDriverRole** mà bạn đã tạo ra ở bước trước.
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks19.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks19.png)
 
 8. Ở mục **labEKSEFSCSIDriverRole**.
 
 - Chọn **Trust relationships**.
 - Chọn **Edit trust policy**.
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks20.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks20.png)
 
 9. Ở mục **Edit trust policy**.
 
@@ -107,6 +107,6 @@ Các tính năng chính của trình điều khiển EFS CSI bao gồm:
   }
   ```
 - Bấm **Update policy**.
-  ![VPC](/workshop.chaunguyen.site/images//3.eks/ws01-createeks21.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks21.png)
 
 Tiếp theo, chúng ta sẽ tạo EFS.

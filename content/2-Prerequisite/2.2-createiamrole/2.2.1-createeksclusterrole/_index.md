@@ -12,25 +12,25 @@ pre: " <b> 2.2.1 </b> "
 
 - Click **Roles**.
 - Click **Create role**.
-  ![VPC](/workshop.chaunguyen.site/images//2.prerequisite/ws01-createrole01.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-createrole01.png)
 
 2. At **Step 1: Select trusted entity** section.
 
 - At **Use case** section, choose **EKS** at **Service or use case** field.
 - Next, choose **EKS - Cluster**.
 - Click **Next**.
-  ![VPC](/workshop.chaunguyen.site/images//2.prerequisite/ws01-createrole02.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-createrole02.png)
 
 3. At **Step 2: Add permissions** section.
 
 - Leave as default and click **Next**.
-  ![VPC](/workshop.chaunguyen.site/images//2.prerequisite/ws01-createrole03.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-createrole03.png)
 
 4. At **Step 3: Name, review, and create** section.
 
 - At **Role details** section, fill the **Role name** field with **labEKSClusterRole** value.
-  ![VPC](/workshop.chaunguyen.site/images//2.prerequisite/ws01-createrole04.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-createrole04.png)
 - Scroll down and click **Create role**.
-  ![VPC](/workshop.chaunguyen.site/images//2.prerequisite/ws01-createrole05.png)
+  ![VPC](/workshop-01-wordpress-deployment-on-eks/images/2.prerequisite/ws01-createrole05.png)
 
 Next, we will create **labNodeGroupsRole**.

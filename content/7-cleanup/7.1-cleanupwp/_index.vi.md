@@ -37,6 +37,6 @@ pre: " <b> 7.1 </b> "
 
 - Ở bảng bên trái, kéo xuống và bấm **Load Balancers**.
 - Đến đây, chúng ta sẽ không thấy cân bằng tải **k8s-default-myreleas-65aed09cf0** nữa.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup01.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup01.png)
 
 Tiếp theo, chúng ta sẽ dọn dẹp cụm EKS.

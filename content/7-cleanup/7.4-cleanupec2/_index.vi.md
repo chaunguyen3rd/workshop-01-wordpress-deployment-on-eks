@@ -14,9 +14,9 @@ pre: " <b> 7.4 </b> "
 - Bấm **labBastionHost01**.
 - Bấm **Instance state**.
 - Bấm **Terminate (delete) instance**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup08.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup08.png)
 - Ở popup, bấm **Terminate (Delete)**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup09.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup09.png)
 
 2. Ở trang [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
 
@@ -24,9 +24,9 @@ pre: " <b> 7.4 </b> "
 - Chọn **labBastionHostSSHKey01**.
 - Bấm **Actions**.
 - Bấm **Delete**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup10.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup10.png)
 - Ở popup, nhập **Delete** và bấm **Delete**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup11.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup11.png)
 
 3. Ở trang [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home).
 
@@ -34,8 +34,8 @@ pre: " <b> 7.4 </b> "
 - Chọn **labEKSClusterSG01**, **labBastionHostSG01** và **labEFSSG01**.
 - Bấm **Actions**.
 - Bấm **Delete security groups**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup25.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup25.png)
 - Ở popup, nhập **delete** và bấm **Delete**.
-  ![Cleanup](/workshop.chaunguyen.site/images//7.cleanup/ws01-cleanup26.png)
+  ![Cleanup](/workshop-01-wordpress-deployment-on-eks/images/7.cleanup/ws01-cleanup26.png)
 
 Tiếp theo, chúng ta sẽ dọn dẹp vpc.

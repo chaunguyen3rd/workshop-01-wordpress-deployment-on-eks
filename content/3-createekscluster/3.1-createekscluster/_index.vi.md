@@ -14,45 +14,45 @@ pre: " <b> 3.1. </b> "
 
 - Bấm **Clusters**.
 - Bấm **Add cluster**, then click **Create**.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks01.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks01.png)
 
 2. Ở mục **Step 1: Configure cluster**.
 
 - Điền vào trường **Name** với giá trị **labEKSCluster01**.
 - Ở trường **Cluster service role**, chọn **labEKSClusterRole**.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks02.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks02.png)
 - Kéo xuống và bấm **Next**.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks03.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks03.png)
 
 3. Ở mục **Step 2: Specify networking**.
 
 - Ở trường **VPC**, chọn **labVPC01**.
 - Ở trường **Subnets**, chọn **labPrivateSubnet01** và **labPrivateSubnet02**.
 - Ở trường **Security groups**, chọn **labEKSClusterSG01**.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks04.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks04.png)
 - Kéo xuống, ở mục **Cluster endpoint access**, chọn **Private**.
 - Bấm **Next**.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks05.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks05.png)
 
 4. Ở mục **Step 3: Configure observability**.
 
 - Giữ mặc định và bấm **Next**.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks06.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks06.png)
 
 5. Ở mục **Step 4: Select add-ons**.
 
 - Giữ mặc định và bấm **Next**.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks07.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks07.png)
 
 6. Ở mục **Step 5: Configure selected add-ons settings**.
 
 - Giữ mặc định và bấm **Next**.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks08.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks08.png)
 
 7. Ở mục **Step 6: Review and create**.
 
 - Giữ mặc định và bấm **Create**.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks09.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks09.png)
 
 {{% notice note %}}
 Sẽ mất một thời gian để cụm EKS được tạo thành công.
@@ -61,6 +61,6 @@ Sẽ mất một thời gian để cụm EKS được tạo thành công.
 7. Kiểm tra nếu cụm **labEKSCluster01** đã tạo thành công hay chưa.
 
 - Lưu lại giá trị **OpenID Connect provider URL** cho bước kế tiếp.
-  ![Connect](/workshop.chaunguyen.site/images//3.eks/ws01-createeks10.png)
+  ![Connect](/workshop-01-wordpress-deployment-on-eks/images/3.eks/ws01-createeks10.png)
 
 Tiếp theo chúng ta sẽ tạo Node groups.
